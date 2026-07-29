@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
    [SerializeField] private bool isRunning =false;
     
    [SerializeField] private float speedRun = 8f;
+   [SerializeField] private int healt = 100;
+
 
     private float inicialSpeed;
     private Rigidbody2D rig; 
@@ -24,6 +26,11 @@ public class Player : MonoBehaviour
     public bool _isRunning{
         get { return this.isRunning;} 
         set { this.isRunning = value;} 
+    }
+
+     public int _healt{
+        get { return this.healt;} 
+        set { this.healt = value;} 
     }
 
     private void OnInput(){
