@@ -1,26 +1,23 @@
-using TMPro;
 using UnityEngine;
 
-
 [RequireComponent(typeof(Player))]
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class PlayerHealt : MonoBehaviour
 {
     private Player player;
-    [SerializeField] TMP_Text healttex;
+    
     [SerializeField] int maxtHelt;
     void Start()
     {
         player = GetComponent<Player>();
-        maxtHelt = player._healt;
-        healttex.text = "HP: "+ player._healt +" / "+maxtHelt;
+        maxtHelt = player._health;
+        //healttex.text = "HP: "+ player._health +" / "+maxtHelt;
     }
     
     public void ChanngeHealth(int amount)
     {
-        player._healt +=amount;
-        healttex.text = "HP: "+ player._healt +" / "+maxtHelt;
-        if(player._healt <= 0)
+        player._health +=amount;
+        //healttex.text = "HP: "+ player._health +" / "+maxtHelt;
+        if(player._health <= 0)
         {
             player.gameObject.SetActive(false);
         }
