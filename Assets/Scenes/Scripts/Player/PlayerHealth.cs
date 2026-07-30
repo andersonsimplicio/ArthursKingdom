@@ -7,6 +7,9 @@ public class PlayerHealt : MonoBehaviour
     private Player player;
     [SerializeField] TMP_Text healthText;
     [SerializeField] int maxtHelt;
+    [SerializeField] Animator healthTextAnimator;
+     private static readonly int lifeHash = Animator.StringToHash("lifetext");
+
     void Start()
     {
         player = GetComponent<Player>();
@@ -17,7 +20,8 @@ public class PlayerHealt : MonoBehaviour
     public void ChanngeHealth(int amount)
     {
         player._health +=amount;
-        //healthText.text = "HP: "+ player._health +" / "+maxtHelt;
+        healthText.text = "HP: "+ player._health +" / "+maxtHelt;
+        healthTextAnimator.Play(lifeHash);
         if(player._health <= 0)
         {
             player.gameObject.SetActive(false);
