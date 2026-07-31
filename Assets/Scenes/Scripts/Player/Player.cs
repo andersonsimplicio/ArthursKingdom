@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
          OnRun();
     }  
 
-  
   #region Movimento
 
     private void FixedUpdate(){

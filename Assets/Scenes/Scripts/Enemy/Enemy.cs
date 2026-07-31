@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
        Debug.Log($"Colidiu com: {collision.gameObject.name}");
+       if(collision.gameObject.CompareTag("Player"))
        collision.gameObject.GetComponent<PlayerHealt>().ChanngeHealth(damage); 
     }
 }

@@ -17,9 +17,6 @@ public class PlayerAnime : MonoBehaviour
         OnMove();
         OnRun();
     }
-
-  
-
     void OnMove()
     {
         if (player._direction.sqrMagnitude > 0){             
