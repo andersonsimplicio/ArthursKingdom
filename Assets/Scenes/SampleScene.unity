@@ -652,7 +652,8 @@ Transform:
   m_LocalPosition: {x: -5.12, y: -2.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 823300620}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &749256735
@@ -668,6 +669,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   damage: -10
+  attackPoint: {fileID: 0}
+  weapomRange: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &749256736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovent
   speed: 0
   facingDirection: 1
+  attackRange: 1.2
   enemyState: 2
   player: {fileID: 0}
 --- !u!95 &749256737
@@ -742,6 +749,37 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 1.2052262, y: 0.14921737}
   m_Radius: 2.9658878
+--- !u!1 &823300619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823300620}
+  m_Layer: 10
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &823300620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823300619}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.98, y: -0.23, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 749256734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983110004
 GameObject:
   m_ObjectHideFlags: 0
