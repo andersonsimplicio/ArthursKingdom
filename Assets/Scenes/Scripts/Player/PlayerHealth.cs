@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
-public class PlayerHealt : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     private Player player;
     [SerializeField] TMP_Text healthText;
@@ -17,7 +17,7 @@ public class PlayerHealt : MonoBehaviour
         healthText.text = "HP: "+ player._health +" / "+maxtHelt;
     }
     
-    public void ChanngeHealth(int amount)
+    public void ChangeHealth(int amount)
     {
         player._health +=amount;
         healthText.text = "HP: "+ player._health +" / "+maxtHelt;
