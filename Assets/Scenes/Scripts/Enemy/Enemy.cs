@@ -12,5 +12,9 @@ public class Enemy : MonoBehaviour
             playerHealth.ChangeHealth(damage);
         }
     }
+    public void Attack()
+    {
+        Debug.Log("Attack Player Now!");
+    }
 }
    

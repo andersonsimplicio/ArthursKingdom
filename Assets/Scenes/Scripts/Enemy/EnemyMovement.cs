@@ -31,12 +31,13 @@ public class EnemyMovement : MonoBehaviour
 
    void ChangeState(EnemyState newState)
     {
-        if(enemyState == newState) return ;
-
-        anim.SetBool(isIdleHash,newState==EnemyState.isIdle);
-        anim.SetBool(isMovingHash,newState==EnemyState.isMoving);
+    
         anim.SetBool(isAttackHash,newState==EnemyState.isAttack);
         enemyState = newState;
+        anim.SetBool(isIdleHash,newState==EnemyState.isIdle);
+        anim.SetBool(isMovingHash,newState==EnemyState.isMoving);
+
+       
     }
 
 
@@ -48,18 +49,22 @@ public class EnemyMovement : MonoBehaviour
         }else if(enemyState == EnemyState.isAttack)
         {
             // não faz nada
+            rb.linearVelocity =  Vector2.zero;
+            ChangeState(EnemyState.isAttack);
+            
         }
     }
     void Chase()
     {
+        Debug.Log($"Chase {Vector2.Distance(transform.position,player.transform.position)}");
         if(Vector2.Distance(transform.position,player.transform.position) <= attackRange)
         {
+            Debug.Log($"Chase {Vector2.Distance(transform.position,player.transform.position)}");
             ChangeState(EnemyState.isAttack);
         }else 
           if(player.position.x > transform.position.x && facingDirection == -1 || 
                player.position.x < transform.position.x && facingDirection == 1){
                 Flip();
-
             }
             Vector2 direction = (player.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
@@ -71,9 +76,9 @@ public class EnemyMovement : MonoBehaviour
         transform.localScale = new Vector3(facingDirection,transform.localScale.y,transform.localScale.z);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-    
+        
         if (collision.CompareTag("Player"))
         {
          
@@ -82,7 +87,10 @@ public class EnemyMovement : MonoBehaviour
                 player = collision.transform;
                 
             }
-           ChangeState(EnemyState.isMoving);
+            if(Vector2.Distance(transform.position,player.transform.position) >= attackRange)
+                ChangeState(EnemyState.isMoving);
+            else
+                ChangeState(EnemyState.isAttack);
         }
     }
 
