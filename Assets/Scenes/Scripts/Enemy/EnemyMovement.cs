@@ -59,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log($"Chase {Vector2.Distance(transform.position,player.transform.position)}");
         if(Vector2.Distance(transform.position,player.transform.position) <= attackRange)
         {
-            Debug.Log($"Chase {Vector2.Distance(transform.position,player.transform.position)}");
+           
             ChangeState(EnemyState.isAttack);
         }else 
           if(player.position.x > transform.position.x && facingDirection == -1 || 
@@ -89,8 +89,7 @@ public class EnemyMovement : MonoBehaviour
             }
             if(Vector2.Distance(transform.position,player.transform.position) >= attackRange)
                 ChangeState(EnemyState.isMoving);
-            else
-                ChangeState(EnemyState.isAttack);
+           
         }
     }
 
