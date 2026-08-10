@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private int facingDirection = 1;
     [SerializeField] private EnemyState enemyState;
+    [SerializeField] private float attackRange;
+
 
     private Rigidbody2D rb;
     [SerializeField] private Transform player;
@@ -21,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
     {
         speed = 2f;
         enemyState = EnemyState.isDefault;
+        attackRange = 1.2f;
         rb = GetComponent<Rigidbody2D>();
         anim  =GetComponent<Animator>();
         ChangeState(EnemyState.isIdle);
@@ -41,14 +44,25 @@ public class EnemyMovement : MonoBehaviour
     {
         if (enemyState == EnemyState.isMoving)
         {
-            if(player.position.x > transform.position.x && facingDirection == -1 || 
+            Chase();
+        }else if(enemyState == EnemyState.isAttack)
+        {
+            // não faz nada
+        }
+    }
+    void Chase()
+    {
+        if(Vector2.Distance(transform.position,player.transform.position) <= attackRange)
+        {
+            ChangeState(EnemyState.isAttack);
+        }else 
+          if(player.position.x > transform.position.x && facingDirection == -1 || 
                player.position.x < transform.position.x && facingDirection == 1){
                 Flip();
 
             }
             Vector2 direction = (player.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
-        }
     }
 
     void Flip()
