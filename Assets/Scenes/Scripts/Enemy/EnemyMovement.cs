@@ -80,8 +80,9 @@ public class EnemyMovement : MonoBehaviour
             if (player == null)
             {
                 player = collision.transform;
+                ChangeState(EnemyState.isMoving);
             }
-            ChangeState(EnemyState.isMoving);
+           
         }
     }
 
@@ -90,8 +91,9 @@ public class EnemyMovement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             rb.linearVelocity = Vector2.zero;
+            ChangeState(EnemyState.isIdle);
         }
-        ChangeState(EnemyState.isIdle);
+       
     }
 }
 
