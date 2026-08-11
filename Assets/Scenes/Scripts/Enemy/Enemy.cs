@@ -3,13 +3,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int damage = -10;
-    [SerializeField] float weaponRange;
+    [SerializeField] float weaponRange =1.2f;
     [SerializeField] LayerMask playerLayer;
     [SerializeField] Transform attackPoint;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
+
         if (collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
         {   
             playerHealth.ChangeHealth(damage);

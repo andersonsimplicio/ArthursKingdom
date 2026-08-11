@@ -7,12 +7,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private int facingDirection = 1;
     [SerializeField] private EnemyState enemyState;
-    [SerializeField] private float attackRange;
-
-
+    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private float attackCoolDown = 2f;
+    [SerializeField] private float attackCoolDownTimer;
+    [SerializeField] private float playerDetectRange = 5f;
+    [SerializeField] Transform detectkPoint;
+    [SerializeField] LayerMask playerLayer;
     private Rigidbody2D rb;
     [SerializeField] private Transform player;
     private Animator anim;
+
+
+   
 
     private static readonly int isMovingHash = Animator.StringToHash("isMoving");
     private static readonly int isAttackHash = Animator.StringToHash("isAttack");
@@ -43,6 +49,11 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        CheckForPlayer();
+        if(attackCoolDownTimer > 0){
+            attackCoolDownTimer-= Time.deltaTime;
+        }
+
         if (enemyState == EnemyState.isMoving)
         {
             Chase();
@@ -56,13 +67,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void Chase()
     {
-        Debug.Log($"Chase {Vector2.Distance(transform.position,player.transform.position)}");
-        if(Vector2.Distance(transform.position,player.transform.position) <= attackRange)
-        {
-           
-            ChangeState(EnemyState.isAttack);
-        }else 
-          if(player.position.x > transform.position.x && facingDirection == -1 || 
+        if(player.position.x > transform.position.x && facingDirection == -1 || 
                player.position.x < transform.position.x && facingDirection == 1){
                 Flip();
             }
@@ -76,31 +81,26 @@ public class EnemyMovement : MonoBehaviour
         transform.localScale = new Vector3(facingDirection,transform.localScale.y,transform.localScale.z);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void CheckForPlayer()
     {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(detectkPoint.position,attackRange,playerLayer);
         
-        if (collision.CompareTag("Player"))
+        if(hits.Length > 0)
         {
-         
-            if (player == null)
+            player = hits[0].transform;
+            attackCoolDownTimer = attackCoolDown;
+            if(Vector2.Distance(transform.position,player.transform.position) <= attackRange && attackCoolDownTimer <=0)
             {
-                player = collision.transform;
-                
-            }
+            
+                ChangeState(EnemyState.isAttack);
+            }else
             if(Vector2.Distance(transform.position,player.transform.position) >= attackRange)
                 ChangeState(EnemyState.isMoving);
-           
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
+        else{
             rb.linearVelocity = Vector2.zero;
             ChangeState(EnemyState.isIdle);
-        }
-       
+        }      
     }
 }
 

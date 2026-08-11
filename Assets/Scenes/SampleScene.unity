@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 749256735}
   - component: {fileID: 749256736}
   - component: {fileID: 749256737}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Enemy_lancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,10 +669,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   damage: -10
-  weaponRange: 0
+  weaponRange: 10
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   attackPoint: {fileID: 1743939214}
 --- !u!114 &749256736
 MonoBehaviour:
@@ -690,6 +690,8 @@ MonoBehaviour:
   facingDirection: 1
   enemyState: 2
   attackRange: 1.2
+  attackCoolDown: 2
+  attackCoolDownTimer: 2
   player: {fileID: 0}
 --- !u!95 &749256737
 Animator:
@@ -1359,7 +1361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1743939214}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
