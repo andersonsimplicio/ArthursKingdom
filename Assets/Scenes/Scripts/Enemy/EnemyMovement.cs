@@ -8,8 +8,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private int facingDirection = 1;
     [SerializeField] private EnemyState enemyState;
     [SerializeField] private float attackRange = 2f;
-    [SerializeField] private float attackCoolDown = 2f;
-    [SerializeField] private float attackCoolDownTimer;
+    [SerializeField] private float attackCoolDown = 1f;
+    [SerializeField] private float attackCoolDownTimer=1f;
     [SerializeField] private float playerDetectRange = 5f;
     [SerializeField] Transform detectkPoint;
     [SerializeField] LayerMask playerLayer;
@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         CheckForPlayer();
-        if(attackCoolDownTimer > 0){
+         if(attackCoolDownTimer > 0){
             attackCoolDownTimer-= Time.deltaTime;
         }
 
@@ -80,21 +80,20 @@ public class EnemyMovement : MonoBehaviour
         facingDirection *= -1;
         transform.localScale = new Vector3(facingDirection,transform.localScale.y,transform.localScale.z);
     }
-
+ 
     private void CheckForPlayer()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(detectkPoint.position,attackRange,playerLayer);
-        
+        Collider2D[] hits = Physics2D.OverlapCircleAll(detectkPoint.position,playerDetectRange,playerLayer);
+        Debug.Log($"hits: {hits.Length}");
         if(hits.Length > 0)
         {
             player = hits[0].transform;
-            attackCoolDownTimer = attackCoolDown;
-            if(Vector2.Distance(transform.position,player.transform.position) <= attackRange && attackCoolDownTimer <=0)
-            {
             
+            if(Vector2.Distance(transform.position,player.position) < attackRange && attackCoolDownTimer <=0)
+            {
+                attackCoolDownTimer = attackCoolDown;
                 ChangeState(EnemyState.isAttack);
-            }else
-            if(Vector2.Distance(transform.position,player.transform.position) >= attackRange)
+            }else if(Vector2.Distance(transform.position,player.position) > attackRange)
                 ChangeState(EnemyState.isMoving);
         }
         else{
