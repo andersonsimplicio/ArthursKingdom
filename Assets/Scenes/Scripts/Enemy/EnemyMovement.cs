@@ -17,9 +17,6 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Transform player;
     private Animator anim;
 
-
-   
-
     private static readonly int isMovingHash = Animator.StringToHash("isMoving");
     private static readonly int isAttackHash = Animator.StringToHash("isAttack");
     private static readonly int isIdleHash = Animator.StringToHash("isIdle");
@@ -42,8 +39,7 @@ public class EnemyMovement : MonoBehaviour
         enemyState = newState;
         anim.SetBool(isIdleHash,newState==EnemyState.isIdle);
         anim.SetBool(isMovingHash,newState==EnemyState.isMoving);
-
-       
+      
     }
 
 
@@ -93,7 +89,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 attackCoolDownTimer = attackCoolDown;
                 ChangeState(EnemyState.isAttack);
-            }else if(Vector2.Distance(transform.position,player.position) > attackRange)
+            }else if(Vector2.Distance(transform.position,player.position) > attackRange && enemyState != EnemyState.isAttack)
                 ChangeState(EnemyState.isMoving);
         }
         else{
@@ -101,6 +97,18 @@ public class EnemyMovement : MonoBehaviour
             ChangeState(EnemyState.isIdle);
         }      
     }
+    /*
+    private void OnDrawGizmos()
+    {
+       if (detectkPoint == null) return;
+
+        // Fica vermelho se detectar um Player, ou verde quando a área estiver livre
+        Gizmos.color = player ? Color.aquamarine : Color.black;
+
+        // Desenha o círculo exato do OverlapCircleAll
+        Gizmos.DrawWireSphere(detectkPoint.position, playerDetectRange);
+    }
+    */
 }
 
 public enum EnemyState

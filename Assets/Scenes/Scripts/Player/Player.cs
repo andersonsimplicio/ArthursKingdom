@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     
    [SerializeField] private float speedRun = 8f;
    [SerializeField] private int health = 100;
+   [SerializeField] private bool isKockBack;
 
 
     private float inicialSpeed;
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
         OnInput();
         inicialSpeed = 5f;
         rig = GetComponent<Rigidbody2D>();
+        isKockBack = false;
     }
 
     void Update()
@@ -51,7 +54,8 @@ public class Player : MonoBehaviour
   #region Movimento
 
     private void FixedUpdate(){
-       OnMove();
+       if(isKockBack == false) 
+            OnMove();
         
     }
     void OnMove()
@@ -86,6 +90,20 @@ public class Player : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) 
             this.direction.x = 1f;
         return this.direction.normalized;
+    }
+
+
+    public void knockBack(Transform enemy, float force,float stnuTime){
+        isKockBack = true;
+        Vector2 direcao = (transform.position - enemy.position).normalized;
+        rig.linearVelocity = direcao * force;
+        StartCoroutine(knockBackCounter(stnuTime));
+    }
+
+    IEnumerator knockBackCounter(float stnuTime){
+        yield return new WaitForSeconds(stnuTime);
+         rig.linearVelocity = Vector2.zero;
+         isKockBack = false;
     }
   #endregion
 }
