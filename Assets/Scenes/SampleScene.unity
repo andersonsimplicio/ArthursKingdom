@@ -961,6 +961,7 @@ GameObject:
   - component: {fileID: 1556439522}
   - component: {fileID: 1556439527}
   - component: {fileID: 1556439531}
+  - component: {fileID: 1556439532}
   - component: {fileID: 1556439530}
   m_Layer: 10
   m_Name: Player
@@ -1164,6 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72be04f89021914281d9f0e3e983587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnime
+  playerCombat: {fileID: 1556439532}
 --- !u!222 &1556439530
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1187,6 +1189,21 @@ MonoBehaviour:
   healthText: {fileID: 1723690905}
   maxtHelt: 0
   healthTextAnimator: {fileID: 1723690907}
+--- !u!114 &1556439532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556439520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8869f8ec77a6f342844b25fd5ff358f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
+  animator: {fileID: 1556439526}
+  coolDown: 1
+  timer: 1
 --- !u!1 &1655951390
 GameObject:
   m_ObjectHideFlags: 0

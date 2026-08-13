@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
-{
+public class Enemy : MonoBehaviour{
     [SerializeField] int damage = -10;
     [SerializeField] float weaponRange =1.2f;
     [SerializeField] float knocBackForce =10f;
@@ -10,6 +9,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
     [SerializeField] Transform attackPoint;
 
+    public void Attack()
+    {
+       
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange,playerLayer);
+        Debug.Log($"Hist: {hits.Length}");
+        if(hits.Length > 0)
+        {
+            hits[0].GetComponent<PlayerHealth>().ChangeHealth(damage);
+            hits[0].GetComponent<Player>().knockBack(transform,knocBackForce,stunTime);
+        }
+    }
+   }
+   
     /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,19 +31,8 @@ public class Enemy : MonoBehaviour
         }
     }
     */
-    public void Attack()
-    {
-        Debug.Log("Attack Player Now!");
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange,playerLayer);
-        Debug.Log($"Hist: {hits.Length}");
-        if(hits.Length > 0)
-        {
-            hits[0].GetComponent<PlayerHealth>().ChangeHealth(damage);
-            hits[0].GetComponent<Player>().knockBack(transform,knocBackForce,stunTime);
-        }
-    }
 
- 
+    
     /*
     private void OnDrawGizmos()
     {
@@ -44,5 +45,3 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position,weaponRange);
     }
     */
-}
-   

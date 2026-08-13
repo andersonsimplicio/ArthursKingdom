@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Player))]
@@ -7,6 +8,7 @@ public class PlayerAnime : MonoBehaviour
    private Player player;
    private Animator animator;
    private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
+  [SerializeField] PlayerCombat playerCombat;
    public void Start()
     {
         player = GetComponent<Player>();
@@ -14,8 +16,14 @@ public class PlayerAnime : MonoBehaviour
     }
     public void Update()
     {
-        OnMove();
-        OnRun();
+         if (Mouse.current.leftButton.wasPressedThisFrame){
+            playerCombat.attack();
+        }else
+        {
+            OnMove();
+            OnRun();
+        }
+     
     }
     void OnMove()
     {
@@ -24,7 +32,7 @@ public class PlayerAnime : MonoBehaviour
         }else{
             animator.SetInteger(TransicaoHash, 0);
         }
-         if (player._direction.x > 0){             
+        if (player._direction.x > 0){             
           transform.eulerAngles = new Vector2(0,0);
         }else if (player._direction.x < 0){
             transform.eulerAngles = new Vector2(0, 180);

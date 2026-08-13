@@ -80,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
     private void CheckForPlayer()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(detectkPoint.position,playerDetectRange,playerLayer);
-        Debug.Log($"hits: {hits.Length}");
+       
         if(hits.Length > 0)
         {
             player = hits[0].transform;

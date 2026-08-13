@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
    [SerializeField] private float speedRun = 8f;
    [SerializeField] private int health = 100;
    [SerializeField] private bool isKockBack;
+  
 
 
     private float inicialSpeed;
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-         OnRun();
+       OnRun();
     }  
 
   #region Movimento
