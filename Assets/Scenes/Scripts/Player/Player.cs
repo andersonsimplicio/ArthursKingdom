@@ -98,7 +98,9 @@ public class Player : MonoBehaviour
         isKockBack = true;
         Vector2 direcao = (transform.position - enemy.position).normalized;
         rig.linearVelocity = direcao * force;
-        StartCoroutine(knockBackCounter(stnuTime));
+        if (gameObject.activeInHierarchy){
+            StartCoroutine(knockBackCounter(stnuTime));
+        }
     }
 
     IEnumerator knockBackCounter(float stnuTime){
