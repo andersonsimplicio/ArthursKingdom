@@ -16,10 +16,9 @@ public class PlayerAnime : MonoBehaviour
     }
     public void Update()
     {
-         if (Mouse.current.leftButton.wasPressedThisFrame){
+        if (Mouse.current.leftButton.wasPressedThisFrame){
             playerCombat.attack();
-        }else
-        {
+        }else{
             OnMove();
             OnRun();
         }

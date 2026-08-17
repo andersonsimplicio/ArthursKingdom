@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour{
 [SerializeField] Animator animator;
-[SerializeField] private float coolDown = 15f;
+[SerializeField] private float coolDown = 1f;
 [SerializeField] private float timer = 1f;
 private static readonly int attackHash = Animator.StringToHash("isAttack");
- private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
+private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
 
 
   void FixedUpdate()
@@ -19,7 +19,7 @@ private static readonly int attackHash = Animator.StringToHash("isAttack");
         if(timer <=0){
             animator.SetInteger(TransicaoHash, 3);
             animator.SetBool(attackHash,true);
-            timer  =coolDown;
+            timer =coolDown;
         }
     }
      public void finishAttacking()    {
