@@ -26,17 +26,16 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
             animator.SetInteger(TransicaoHash, 3);
             animator.SetBool(attackHash,true);
             Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange);
-            if(enemies.Length > 0){
-                enemies[0].GetComponent<EnemyHeath>().ChangeHealth(-damage);
-            }
-
-            timer =coolDown;
+            if(enemies.Length > 0 && enemies[0].GetComponent<EnemyHeath>()!=null){
+                 enemies[0].GetComponent<EnemyHeath>().ChangeHealth(-damage);
+                 timer =coolDown;
+             }
         }
     }
     public void finishAttacking()    {
         animator.SetBool(attackHash,false);
     }
-    
+
     /* 
     private void OnDrawGizmos(){
        if (attackPoint == null) return;
