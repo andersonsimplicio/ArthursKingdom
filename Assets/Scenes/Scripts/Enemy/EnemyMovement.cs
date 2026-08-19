@@ -65,7 +65,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if(player.position.x > transform.position.x && facingDirection == -1 || 
                player.position.x < transform.position.x && facingDirection == 1){
-                Flip();
+               Flip();
             }
             Vector2 direction = (player.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
@@ -97,7 +97,7 @@ public class EnemyMovement : MonoBehaviour
             ChangeState(EnemyState.isIdle);
         }      
     }
-    /*
+    
     private void OnDrawGizmos()
     {
        if (detectkPoint == null) return;
@@ -108,7 +108,7 @@ public class EnemyMovement : MonoBehaviour
         // Desenha o círculo exato do OverlapCircleAll
         Gizmos.DrawWireSphere(detectkPoint.position, playerDetectRange);
     }
-    */
+    
 }
 
 public enum EnemyState

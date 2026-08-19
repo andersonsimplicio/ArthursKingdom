@@ -25,18 +25,32 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
         if(timer <=0){
             animator.SetInteger(TransicaoHash, 3);
             animator.SetBool(attackHash,true);
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange);
-            if(enemies.Length > 0 && enemies[0].GetComponent<EnemyHeath>()!=null){
-                 enemies[0].GetComponent<EnemyHeath>().ChangeHealth(-damage);
-                 timer =coolDown;
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange, enemyLayer);
+           foreach (Collider2D enemy in enemies)
+{
+                if (enemy is not CapsuleCollider2D capsule)
+                    continue;
+
+                Rigidbody2D rb = capsule.attachedRigidbody;
+
+                if (rb == null)
+                    continue;
+
+                EnemyHeath health = rb.GetComponent<EnemyHeath>();
+
+                if (health != null)
+                {
+                    health.ChangeHealth(-damage);
+                }
+                }
+                timer =coolDown;
              }
-        }
     }
     public void finishAttacking()    {
         animator.SetBool(attackHash,false);
     }
 
-    /* 
+
     private void OnDrawGizmos(){
        if (attackPoint == null) return;
 
@@ -46,5 +60,5 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
         // Desenha o círculo exato do OverlapCircleAll
         Gizmos.DrawWireSphere(attackPoint.position, weaponRange);
     }
-    */
+    
 }
