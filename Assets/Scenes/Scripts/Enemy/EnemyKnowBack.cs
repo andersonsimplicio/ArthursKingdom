@@ -12,18 +12,19 @@ public class EnemyKnowBack : MonoBehaviour
         enemyMovement = GetComponent<EnemyMovement>();
     }
 
-    public void knowBack(Transform playerTransform, float knowBackForce,float stunTime){
+    public void knowBack(Transform playerTransform, float knowBackForce,float  knowBackTimer, float stunTime){
         enemyMovement.ChangeState(EnemyState.isKnowBack);
-        StartCoroutine(StunTimer(stunTime));
+        StartCoroutine(StunTimer(knowBackTimer,stunTime));
         Vector2 direction  = (transform.position - playerTransform.position ).normalized;
         rb.linearVelocity = direction * knowBackForce;
         
         Debug.Log("Aplicou recuo!");
     }
-    IEnumerator StunTimer(float stunTime)
+    IEnumerator StunTimer(float  knowBackTimer,float stunTime)
     {
-        yield return new WaitForSeconds(stunTime);
+        yield return new WaitForSeconds(knowBackTimer);
         rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(stunTime);
         enemyMovement.ChangeState(EnemyState.isIdle);
 
     }

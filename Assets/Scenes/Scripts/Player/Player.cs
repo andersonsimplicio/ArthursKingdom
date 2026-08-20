@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
    [SerializeField] private bool isKockBack;
   
 
+    // Novo
+    [SerializeField] private bool isAttacking = false;
 
     private float inicialSpeed;
     private Rigidbody2D rig; 
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
         inicialSpeed = 5f;
         rig = GetComponent<Rigidbody2D>();
         isKockBack = false;
+        isAttacking = false;
     }
 
     void Update()
@@ -57,6 +60,12 @@ public class Player : MonoBehaviour
     private void FixedUpdate(){
        if(isKockBack == false) 
             OnMove();
+
+        if (isAttacking)
+        {
+            rig.linearVelocity = Vector2.zero;
+            return;
+        }
         
     }
     void OnMove()
@@ -77,6 +86,7 @@ public class Player : MonoBehaviour
             speed = inicialSpeed;
              _isRunning = false;
         }
+        
     }
 
 
@@ -92,7 +102,23 @@ public class Player : MonoBehaviour
             this.direction.x = 1f;
         return this.direction.normalized;
     }
+     public void StartAttack(){
+        isAttacking = true;
 
+        // Para imediatamente
+        rig.linearVelocity = Vector2.zero;
+    }
+    public bool IsAttacking()
+    {
+        return isAttacking;
+    }
+    public void EndAttack()
+    {
+        isAttacking = false;
+
+        // Garante que não continue deslizando
+        rig.linearVelocity = Vector2.zero;
+    }
 
     public void knockBack(Transform enemy, float force,float stnuTime){
         isKockBack = true;
