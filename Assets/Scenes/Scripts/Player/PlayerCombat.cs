@@ -5,11 +5,14 @@ public class PlayerCombat : MonoBehaviour{
 [SerializeField] private float coolDown = 1f;
 [SerializeField] private float timer = 1f;
 
+
 [SerializeField] private float weaponRange = 1f;
 [SerializeField] private int damage = 10;
 [SerializeField] private Transform attackPoint;
 [SerializeField] LayerMask enemyLayer;
 
+//Criação de recuo
+[SerializeField] private float knowBackForce = 50;
 
 
 private static readonly int attackHash = Animator.StringToHash("isAttack");
@@ -25,9 +28,12 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
         if(timer <=0){
             animator.SetInteger(TransicaoHash, 3);
             animator.SetBool(attackHash,true);
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange, enemyLayer);
-           foreach (Collider2D enemy in enemies)
-{
+            timer =coolDown;
+        }
+    }
+    public void DealDamage(){
+           Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange, enemyLayer);
+           foreach (Collider2D enemy in enemies){
                 if (enemy is not CapsuleCollider2D capsule)
                     continue;
 
@@ -37,15 +43,17 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
                     continue;
 
                 EnemyHeath health = rb.GetComponent<EnemyHeath>();
-
-                if (health != null)
+                EnemyKnowBack recuo = rb.GetComponent<EnemyKnowBack>();
+                if (health != null && recuo != null)
                 {
                     health.ChangeHealth(-damage);
+                    recuo.knowBack(transform,knowBackForce);
                 }
-                }
-                timer =coolDown;
-             }
+           }
     }
+
+
+
     public void finishAttacking()    {
         animator.SetBool(attackHash,false);
     }

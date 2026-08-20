@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 749256735}
   - component: {fileID: 749256736}
   - component: {fileID: 749256740}
+  - component: {fileID: 749256741}
   m_Layer: 11
   m_Name: Enemy_lancer
   m_TagString: Untagged
@@ -768,6 +769,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHeath
   health: 100
   maxHealth: 100
+--- !u!114 &749256741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749256730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1319cc7260568141b6baa2d5108c6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnowBack
 --- !u!1 &983110004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1237,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 2048
+  knowBackForce: 50
 --- !u!1 &1655951390
 GameObject:
   m_ObjectHideFlags: 0

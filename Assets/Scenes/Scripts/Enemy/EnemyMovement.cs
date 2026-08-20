@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         ChangeState(EnemyState.isIdle);
     }
 
-   void ChangeState(EnemyState newState)
+   public void ChangeState(EnemyState newState)
     {
     
         anim.SetBool(isAttackHash,newState==EnemyState.isAttack);
@@ -45,20 +45,23 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        CheckForPlayer();
-         if(attackCoolDownTimer > 0){
-            attackCoolDownTimer-= Time.deltaTime;
-        }
 
-        if (enemyState == EnemyState.isMoving)
-        {
-            Chase();
-        }else if(enemyState == EnemyState.isAttack)
-        {
-            // não faz nada
-            rb.linearVelocity =  Vector2.zero;
-            ChangeState(EnemyState.isAttack);
-            
+        if(enemyState!=EnemyState.isKnowBack){
+            CheckForPlayer();
+            if(attackCoolDownTimer > 0){
+                attackCoolDownTimer-= Time.deltaTime;
+            }
+
+            if (enemyState == EnemyState.isMoving)
+            {
+                Chase();
+            }else if(enemyState == EnemyState.isAttack)
+            {
+                // não faz nada
+                rb.linearVelocity =  Vector2.zero;
+                ChangeState(EnemyState.isAttack);
+                
+            }
         }
     }
     void Chase()
@@ -116,5 +119,6 @@ public enum EnemyState
     isIdle,
     isMoving,
     isAttack,
+    isKnowBack,
     isDefault
 }
