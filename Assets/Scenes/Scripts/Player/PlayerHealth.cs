@@ -6,23 +6,21 @@ public class PlayerHealth : MonoBehaviour
 {
     private Player player;
     [SerializeField] TMP_Text healthText;
-    [SerializeField] int maxtHelt;
-    [SerializeField] Animator healthTextAnimator;
+      [SerializeField] Animator healthTextAnimator;
      private static readonly int lifeHash = Animator.StringToHash("lifetext");
 
     void Start()
     {
         player = GetComponent<Player>();
-        maxtHelt = player._health;
-        healthText.text = "HP: "+ player._health +" / "+maxtHelt;
+        healthText.text = "HP: "+ StatsManager.instance.Health +" / "+StatsManager.instance.MaxHealth;
     }
     
     public void ChangeHealth(int amount)
     {
-        player._health +=amount;
-        healthText.text = "HP: "+ player._health +" / "+maxtHelt;
+        StatsManager.instance.Health +=amount;
+        healthText.text = "HP: "+ StatsManager.instance.Health +" / "+StatsManager.instance.MaxHealth;
         healthTextAnimator.Play(lifeHash);
-        if(player._health <= 0)
+        if(StatsManager.instance.Health <= 0)
         {
             player.gameObject.SetActive(false);
         }

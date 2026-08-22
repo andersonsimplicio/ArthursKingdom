@@ -857,6 +857,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983110004}
   m_CullTransparentMesh: 1
+--- !u!1 &985631448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 985631450}
+  - component: {fileID: 985631449}
+  m_Layer: 0
+  m_Name: StatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &985631449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985631448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb278ff7adce5b4787e891a15b75d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatsManager
+  weaponRange: 1
+  knowBackForce: 3
+  knowBackTimer: 0.15
+  stuntimer: 0.3
+  damage: 10
+  timer: 1
+  coolDown: 1
+  speed: 5
+  speedRun: 8
+  beginSpeedRun: 5
+  health: 100
+  maxHealth: 100
+--- !u!4 &985631450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985631448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.54806, y: -2.95178, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085059442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,10 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   direction: {x: 0, y: 0}
-  speed: 5
   isRunning: 0
-  speedRun: 8
-  health: 100
   isKockBack: 0
   isAttacking: 0
 --- !u!212 &1556439523
@@ -1193,6 +1246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72be04f89021914281d9f0e3e983587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnime
+  spriteRenderer: {fileID: 1556439523}
   playerCombat: {fileID: 1556439532}
 --- !u!222 &1556439530
 CanvasRenderer:
@@ -1215,7 +1269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealt
   healthText: {fileID: 1723690905}
-  maxtHelt: 0
   healthTextAnimator: {fileID: 1723690907}
 --- !u!114 &1556439532
 MonoBehaviour:
@@ -1230,17 +1283,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
   animator: {fileID: 1556439526}
-  coolDown: 1
-  timer: 1
-  weaponRange: 1
-  damage: 10
   attackPoint: {fileID: 1424528258}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 2048
-  knowBackForce: 2
-  knowBackTimer: 0.15
-  stuntimer: 0.5
 --- !u!1 &1655951390
 GameObject:
   m_ObjectHideFlags: 0
@@ -8993,3 +9039,4 @@ SceneRoots:
   - {fileID: 1085059445}
   - {fileID: 511154685}
   - {fileID: 2078233976}
+  - {fileID: 985631450}

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerAnime : MonoBehaviour
 {
    private Player player;
+   [SerializeField] private SpriteRenderer spriteRenderer;
    private Animator animator;
    private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
   [SerializeField] PlayerCombat playerCombat;
@@ -16,13 +17,12 @@ public class PlayerAnime : MonoBehaviour
     }
     public void Update()
     {
+        OnMove();
+        OnRun();
         if (Mouse.current.leftButton.wasPressedThisFrame){
             playerCombat.attack();
-        }else{
-            OnMove();
-            OnRun();
         }
-     
+           
     }
     void OnMove()
     {
@@ -31,13 +31,14 @@ public class PlayerAnime : MonoBehaviour
         }else{
             animator.SetInteger(TransicaoHash, 0);
         }
-        if (player._direction.x > 0){             
-          transform.eulerAngles = new Vector2(0,0);
-        }else if (player._direction.x < 0){
-            transform.eulerAngles = new Vector2(0, 180);
+
+        if (player._direction.x > 0){
+            spriteRenderer.flipX = false;
+        }else if (player._direction.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
         }
-        
-    }
     void OnRun()
     {
         if (player._isRunning && player._direction.sqrMagnitude > 0)
