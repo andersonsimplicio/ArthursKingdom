@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour{
     {
        
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange,playerLayer);
-        Debug.Log($"Hist: {hits.Length}");
+        
         if(hits.Length > 0)
         {
             hits[0].GetComponent<PlayerHealth>().ChangeHealth(damage);

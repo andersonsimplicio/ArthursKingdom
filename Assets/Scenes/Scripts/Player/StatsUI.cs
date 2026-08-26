@@ -38,11 +38,15 @@ public class StatsUI : MonoBehaviour
          if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame) { 
                 
                 if(statsOpen){
+                    Time.timeScale = 1;
                     statsCanvas.alpha = 0;
                     statsOpen = false;
+                    updateAllStats();
                 }else{
+                    Time.timeScale = 0;
                     statsOpen = true;
                     statsCanvas.alpha = 1;
+                    updateAllStats();
                 }
         }
     }

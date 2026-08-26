@@ -36,10 +36,13 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - UI-STATS
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI-STATS
+    uniqueID: 3654743501
     locked: 0
   m_RenderingLayers:
   - Default

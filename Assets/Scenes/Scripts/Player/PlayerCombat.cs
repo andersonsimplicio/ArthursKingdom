@@ -4,6 +4,7 @@ public class PlayerCombat : MonoBehaviour{
 [SerializeField] Animator animator;
 [SerializeField] private Transform attackPoint;
 [SerializeField] LayerMask enemyLayer;
+[SerializeField] StatsUI uiStats;
 
 //Criação de recuo
 
@@ -41,8 +42,12 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
                 EnemyKnowBack recuo = rb.GetComponent<EnemyKnowBack>();
                 if (health != null && recuo != null)
                 {
+                    StatsManager.instance.Damage+=1000;
+                    Debug.Log($"Attack + 1 = : {StatsManager.instance.Damage}");
                     health.ChangeHealth(-StatsManager.instance.Damage);
                     recuo.knowBack(transform,StatsManager.instance.KnowBackForce,StatsManager.instance.KnowBackTimer,StatsManager.instance.StunTimer);
+                    
+                    uiStats.updateDamage();
                 }
            }
     }
