@@ -42,8 +42,7 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
                 EnemyKnowBack recuo = rb.GetComponent<EnemyKnowBack>();
                 if (health != null && recuo != null)
                 {
-                    StatsManager.instance.Damage+=1000;
-                    Debug.Log($"Attack + 1 = : {StatsManager.instance.Damage}");
+                    //StatsManager.instance.Damage+=0;
                     health.ChangeHealth(-StatsManager.instance.Damage);
                     recuo.knowBack(transform,StatsManager.instance.KnowBackForce,StatsManager.instance.KnowBackTimer,StatsManager.instance.StunTimer);
                     
@@ -51,9 +50,6 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
                 }
            }
     }
-
-
-
     public void finishAttacking()    {
         animator.SetBool(attackHash,false);
     }
