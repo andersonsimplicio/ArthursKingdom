@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 30b96f84d0b1dd14f89b0c332ead529c
+guid: d083c7061ca01bb4dba949a0149379bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5933501394793169653
-    second: SmallBlueRoundButton_Pressed_0
+      213: 8233361688233105488
+    second: skill-panel-fundo-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,53 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SmallBlueRoundButton_Pressed_0
+      name: skill-panel-fundo-2_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 14
-        width: 106
-        height: 87
+        x: 48
+        y: 108
+        width: 1511
+        height: 802
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f28eeed418085250800000000000000
-      internalID: 5933501394793169653
+      spriteID: 058d17e45d6c24270800000000000000
+      internalID: 8233361688233105488
       vertices: []
       indices: 
       edges: []
@@ -151,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1a13cf054b6524b4688962918f648388
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SmallBlueRoundButton_Pressed_0: 5933501394793169653
+      skill-panel-fundo-2_0: 8233361688233105488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
