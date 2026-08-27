@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f57fb2f3ce256c84fac2b269f59466ed
+guid: 314d463da5663fb4bbbceb17261322b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4723508938465363571
-    second: Skill-panel_0
+      213: -5636364570333435427
+    second: skill-panel-title_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skill-panel_0
+      name: skill-panel-title_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1253
-        height: 1254
+        y: 407
+        width: 4
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 0, z: 3, w: 2}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d89b36d85a9b27eb0800000000000000
-      internalID: -4723508938465363571
+      spriteID: dd9ada8394c97c1b0800000000000000
+      internalID: -5636364570333435427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skill-panel-title_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 25
+        width: 2032
+        height: 743
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd87f547aaa5f946af31d5dfd140db5
+      internalID: -949375123
       vertices: []
       indices: 
       edges: []
@@ -125,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 214790d6ea774074fa47bbba9d1b937f
+    spriteID: c1d32e47307b3894c9939487be49af05
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +155,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Skill-panel_0: -4723508938465363571
+      skill-panel-title_0: -5636364570333435427
+      skill-panel-title_1: -949375123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
