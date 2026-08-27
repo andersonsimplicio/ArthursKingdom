@@ -2020,7 +2020,7 @@ GameObject:
   - component: {fileID: 1337031892}
   - component: {fileID: 1337031894}
   - component: {fileID: 1337031893}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: SkillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2036,15 +2036,15 @@ RectTransform:
   m_GameObject: {fileID: 1337031891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 13.999505, y: 10.972585, z: 7.5673}
+  m_LocalScale: {x: 12.57252, y: 10.139681, z: 6.430238}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1560741461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000080463, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337031893
 MonoBehaviour:
@@ -2060,13 +2060,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4723508938465363571, guid: f57fb2f3ce256c84fac2b269f59466ed, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.35
 --- !u!222 &1337031894
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2248,14 +2248,14 @@ RectTransform:
   m_GameObject: {fileID: 1424528257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.87626, y: 0.87626, z: 0.87626}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1556439524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.097, y: -0.13300002}
+  m_AnchoredPosition: {x: 0.097, y: -0.133}
   m_SizeDelta: {x: 97, y: 97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1442829318
@@ -2607,7 +2607,7 @@ GameObject:
   - component: {fileID: 1560741464}
   - component: {fileID: 1560741463}
   - component: {fileID: 1560741462}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: SkillsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2695,7 +2695,7 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -640223795
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1655951390
