@@ -53,7 +53,7 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
     public void finishAttacking()    {
         animator.SetBool(attackHash,false);
     }
-
+/*
 
     private void OnDrawGizmos(){
     if (attackPoint == null) return;
@@ -63,4 +63,5 @@ private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
     Gizmos.DrawWireSphere(attackPoint.position, StatsManager.instance.WeaponRange);
     
     }
+    */
 }
