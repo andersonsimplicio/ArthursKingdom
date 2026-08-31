@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a3552be053ae18144853201362943b31
+guid: 52f99c57d3028944292161ad0b4012a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4135407052465368230
-    second: skill-panel-placa-final_0
+      213: 5461583279877749565
+    second: heart_icon128_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skill-panel-placa-final_0
+      name: heart_icon128_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 17
-        width: 1964
-        height: 769
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ace7dbcdcae36930800000000000000
-      internalID: 4135407052465368230
+      spriteID: d3b735c6e017bcb40800000000000000
+      internalID: 5461583279877749565
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skill-panel-placa-final_0: 4135407052465368230
+      heart_icon128_0: 5461583279877749565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

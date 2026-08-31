@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a3552be053ae18144853201362943b31
+guid: a67b61bfc0cb9cf409bf45c63f22a7a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4135407052465368230
-    second: skill-panel-placa-final_0
+      213: -1884676638206698643
+    second: ice_icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skill-panel-placa-final_0
+      name: ice_icon_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 17
-        width: 1964
-        height: 769
+        x: 0
+        y: 0
+        width: 497
+        height: 497
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ace7dbcdcae36930800000000000000
-      internalID: 4135407052465368230
+      spriteID: d6b563f359848d5e0800000000000000
+      internalID: -1884676638206698643
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skill-panel-placa-final_0: 4135407052465368230
+      ice_icon_0: -1884676638206698643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
