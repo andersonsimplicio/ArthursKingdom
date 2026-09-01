@@ -15,8 +15,6 @@ public class StatsUI : MonoBehaviour
         updateAllStats();
     }
 
-    
-    
     void updateAllStats()
     {
         updateDamage();
