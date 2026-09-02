@@ -13,4 +13,9 @@ public class SkillSO : ScriptableObject
         get { return this.skillIcon;} 
         set { this.skillIcon = value;} 
     }
+    public int _maxLevel
+    {
+        get { return this.maxLevel;} 
+        set { this.maxLevel = value;} 
+    }
 }
