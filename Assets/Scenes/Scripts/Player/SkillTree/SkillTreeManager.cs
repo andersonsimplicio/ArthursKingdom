@@ -12,15 +12,50 @@ public class SkillTreeManager : MonoBehaviour
     {
         foreach(SkillSlot slot in skillSlots)
         {
-            slot._skillButton.onClick.AddListener(slot.TryUpgradeSkill);
+            slot._skillButton.onClick.AddListener(()=> CheckAvaliablePoints(slot)) ;
         }
         UpdateAbilityPoints(0);
     }
 
+    public void CheckAvaliablePoints(SkillSlot slot)
+    {
+        if(availablePoints > 0)
+        {
+            slot.TryUpgradeSkill();
+        }
+    }    
     public void UpdateAbilityPoints(int amount)
     {
         availablePoints+=amount;
         pointsText.text = "Pontos de Habilidade: "+availablePoints;
+    }
+
+    private void OnEnable()
+    {
+        SkillSlot.OnAbilityPointsSpent += HandleAbilityPointsSpent;
+        SkillSlot.OnSkillMaxed+= HandleSkillMaxed;
+    }
+     private void OnDisable()
+    {
+        SkillSlot.OnAbilityPointsSpent -= HandleAbilityPointsSpent;
+         SkillSlot.OnSkillMaxed-= HandleSkillMaxed;
+    }
+    private void HandleAbilityPointsSpent(SkillSlot skillslot)
+    {
+        if(availablePoints > 0)
+        {
+            UpdateAbilityPoints(-1); 
+        }
+    }
+  
+    private void HandleSkillMaxed(SkillSlot skillslot)
+    {
+        foreach(SkillSlot slot in skillSlots)
+        {
+            if(!slot._isUnlocked && slot.CanUnlockeSkill()){
+            slot.Unlock();
+            }
+        }
     }
 
 }

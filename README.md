@@ -18,4 +18,4 @@ A Stats System in Unity (Part II: Creating the UI)                              
 sistema de estatísticas no Unity (Parte III: conectando a interface do usuário  - https://www.youtube.com/watch?v=8ojGRMOzXrQ
 Sistema de experiência e nivelamento no Unity                                   - https://www.youtube.com/watch?v=l6-nlk3njv4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=22
 Criando uma árvore de habilidades adaptáveis                                    - https://www.youtube.com/watch?v=8GBC_EC8uJE&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=23
- Parte I: A Interface do Usuário                                                - https://www.youtube.com/watch?v=2wB6mMXnvTI&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=25
+Parte I: A Interface do Usuário                                                 - https://www.youtube.com/watch?v=2wB6mMXnvTI&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=25

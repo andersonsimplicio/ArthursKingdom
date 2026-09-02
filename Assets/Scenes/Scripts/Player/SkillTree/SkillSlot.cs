@@ -1,9 +1,10 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 using TMPro;
-public class SkillSlot : MonoBehaviour
-{
+using System;
+using System.Collections.Generic;
+public class SkillSlot : MonoBehaviour{
+    [SerializeField] List<SkillSlot> prerequisitesSkillSlots;
    [SerializeField] SkillSO skillSO;
    [SerializeField] int leveAtual;
    [SerializeField] bool isUnlocked;
@@ -11,7 +12,14 @@ public class SkillSlot : MonoBehaviour
    [SerializeField] Image skillIcon;
    [SerializeField] TMP_Text skillLevelText;
 
+    public static event Action<SkillSlot> OnAbilityPointsSpent; 
+    public static event Action<SkillSlot> OnSkillMaxed; 
 
+    public bool _isUnlocked
+    {
+        get { return this.isUnlocked;}
+        set { this.isUnlocked = value;}
+    }
     public Button _skillButton
     {
         get { return this.skillButton;}
@@ -37,7 +45,7 @@ public class SkillSlot : MonoBehaviour
         }
         else
         {
-             skillButton.interactable = false; 
+            skillButton.interactable = false; 
             skillLevelText.text ="Locked";
             skillIcon.color = Color.grey;
 
@@ -49,11 +57,32 @@ public class SkillSlot : MonoBehaviour
         if(isUnlocked && leveAtual < skillSO._maxLevel)
         {
             leveAtual++;
+            OnAbilityPointsSpent?.Invoke(this);
+            if(leveAtual >= skillSO._maxLevel)
+            {
+             OnSkillMaxed?.Invoke(this);   
+            }
             UpdateUI();
         }
     }
 
+    public void Unlock()
+    {
+        isUnlocked = true;
+        UpdateUI();
+    }
 
+    public bool CanUnlockeSkill()
+    {
+        foreach (SkillSlot slot in prerequisitesSkillSlots)
+        {
+            if (!slot._isUnlocked || slot.leveAtual < slot.skillSO._maxLevel)
+            {
+                return false;
+            }
+        }
 
+        return true;
+    }
 
 }

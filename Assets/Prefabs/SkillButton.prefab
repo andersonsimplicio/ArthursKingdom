@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 6995613997204681619}
   - component: {fileID: 7344665542317653856}
   - component: {fileID: 7598963731772893654}
-  - component: {fileID: 207174839987204784}
+  - component: {fileID: 2909703675901671478}
   m_Layer: 31
   m_Name: SkillButton
   m_TagString: Untagged
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &207174839987204784
+--- !u!114 &2909703675901671478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
