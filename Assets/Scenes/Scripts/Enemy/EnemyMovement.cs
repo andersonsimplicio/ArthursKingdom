@@ -33,6 +33,16 @@ public class EnemyMovement : MonoBehaviour
         ChangeState(EnemyState.isIdle);
     }
 
+   void ChangeState(EnemyState newState)
+    {   
+        anim.SetBool(isAttackHash,newState==EnemyState.isAttack);
+        if(enemyState == newState) return ;
+
+        anim.SetBool(isIdleHash,newState==EnemyState.isIdle);
+        anim.SetBool(isMovingHash,newState==EnemyState.isMoving);
+        
+        enemyState = newState;
+
    public void ChangeState(EnemyState newState)
     {
     
