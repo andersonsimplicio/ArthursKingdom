@@ -5526,6 +5526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb278ff7adce5b4787e891a15b75d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatsManager
+  healthText: {fileID: 1723690905}
   weaponRange: 1
   knowBackForce: 3
   knowBackTimer: 0.15
@@ -5536,8 +5537,8 @@ MonoBehaviour:
   speed: 5
   speedRun: 8
   beginSpeedRun: 5
-  health: 100
-  maxHealth: 100
+  health: 20
+  maxHealth: 20
 --- !u!4 &985631450
 Transform:
   m_ObjectHideFlags: 0
@@ -6241,7 +6242,7 @@ MonoBehaviour:
   level: 0
   currentExp: 0
   expToLevel: 10
-  expGrowthMultipler: 1.3
+  expGrowthMultipler: 1.45
   expSlider: {fileID: 952024303}
   currentTextLevel: {fileID: 412648813}
 --- !u!1001 &1353463654
@@ -8017,7 +8018,7 @@ MonoBehaviour:
   - {fileID: 1612730440}
   - {fileID: 1078727902}
   pointsText: {fileID: 2072697230}
-  availablePoints: 6
+  availablePoints: 0
 --- !u!224 &1612730439 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2314728832089934763, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
@@ -8452,7 +8453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HP:100/100
+  m_text: HP:20/20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -16746,7 +16747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pontos de Habilidades: 10'
+  m_text: 'Pontos de Habilidades: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
