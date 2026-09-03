@@ -6,7 +6,6 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 2f;
     [SerializeField] private int facingDirection = 1;
-    [SerializeField] private float attackRange = 1.2f;
     [SerializeField] private EnemyState enemyState;
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackCoolDown = 1f;
@@ -32,16 +31,6 @@ public class EnemyMovement : MonoBehaviour
         anim  =GetComponent<Animator>();
         ChangeState(EnemyState.isIdle);
     }
-
-   void ChangeState(EnemyState newState)
-    {   
-        anim.SetBool(isAttackHash,newState==EnemyState.isAttack);
-        if(enemyState == newState) return ;
-
-        anim.SetBool(isIdleHash,newState==EnemyState.isIdle);
-        anim.SetBool(isMovingHash,newState==EnemyState.isMoving);
-        
-        enemyState = newState;
 
    public void ChangeState(EnemyState newState)
     {
