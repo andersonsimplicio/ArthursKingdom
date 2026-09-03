@@ -1,25 +1,47 @@
+using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
-{
+public class Enemy : MonoBehaviour{
     [SerializeField] int damage = -10;
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float weapomRange;
-    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] float weaponRange =1.2f;
+    [SerializeField] float knocBackForce =10f;
+    [SerializeField] float stunTime =10f;
+    [SerializeField] LayerMask playerLayer;
+    [SerializeField] Transform attackPoint;
 
+    public void Attack()
+    {
+       
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position,weaponRange,playerLayer);
+        
+        if(hits.Length > 0)
+        {
+            hits[0].GetComponent<PlayerHealth>().ChangeHealth(damage);
+            hits[0].GetComponent<Player>().knockBack(transform,knocBackForce,stunTime);
+        }
+    }
+   }
+   
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.gameObject.TryGetComponent<PlayerHealth>(out PlayerHealth playerHealth))
         {   
             playerHealth.ChangeHealth(damage);
         }
     }
+    */
 
-    public void Attack()
+    
+    /*
+    private void OnDrawGizmos()
     {
-        Debug.Log("Attack player");
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, weapomRange,playerLayer); 
+       if (attackPoint == null) return;
+
+        // Fica vermelho se detectar um Player, ou verde quando a área estiver livre
+        Gizmos.color = attackPoint ? Color.red : Color.blue;
+
+        // Desenha o círculo exato do OverlapCircleAll
+        Gizmos.DrawWireSphere(attackPoint.position,weaponRange);
     }
-}
-   
+    */

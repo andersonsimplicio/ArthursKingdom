@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Player))]
 public class PlayerAnime : MonoBehaviour
 {
    private Player player;
+   [SerializeField] private SpriteRenderer spriteRenderer;
    private Animator animator;
    private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
+  [SerializeField] PlayerCombat playerCombat;
    public void Start()
     {
         player = GetComponent<Player>();
@@ -16,6 +19,10 @@ public class PlayerAnime : MonoBehaviour
     {
         OnMove();
         OnRun();
+        if (Mouse.current.leftButton.wasPressedThisFrame){
+            playerCombat.attack();
+        }
+           
     }
     void OnMove()
     {
@@ -24,13 +31,14 @@ public class PlayerAnime : MonoBehaviour
         }else{
             animator.SetInteger(TransicaoHash, 0);
         }
-         if (player._direction.x > 0){             
-          transform.eulerAngles = new Vector2(0,0);
-        }else if (player._direction.x < 0){
-            transform.eulerAngles = new Vector2(0, 180);
+
+        if (player._direction.x > 0){
+            spriteRenderer.flipX = false;
+        }else if (player._direction.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
         }
-        
-    }
     void OnRun()
     {
         if (player._isRunning && player._direction.sqrMagnitude > 0)

@@ -8,9 +8,12 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private int facingDirection = 1;
     [SerializeField] private float attackRange = 1.2f;
     [SerializeField] private EnemyState enemyState;
-    
-   
-
+    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private float attackCoolDown = 1f;
+    [SerializeField] private float attackCoolDownTimer=1f;
+    [SerializeField] private float playerDetectRange = 5f;
+    [SerializeField] Transform detectkPoint;
+    [SerializeField] LayerMask playerLayer;
     private Rigidbody2D rb;
     [SerializeField] private Transform player;
     private Animator anim;
@@ -24,52 +27,52 @@ public class EnemyMovement : MonoBehaviour
     {
         speed = 2f;
         enemyState = EnemyState.isDefault;
+        attackRange = 1.2f;
         rb = GetComponent<Rigidbody2D>();
         anim  =GetComponent<Animator>();
         ChangeState(EnemyState.isIdle);
     }
 
-   void ChangeState(EnemyState newState)
-    {   
+   public void ChangeState(EnemyState newState)
+    {
+    
         anim.SetBool(isAttackHash,newState==EnemyState.isAttack);
-        if(enemyState == newState) return ;
-
+        enemyState = newState;
         anim.SetBool(isIdleHash,newState==EnemyState.isIdle);
         anim.SetBool(isMovingHash,newState==EnemyState.isMoving);
-        
-        enemyState = newState;
-
+      
     }
 
 
     void FixedUpdate()
     {
-        if (enemyState == EnemyState.isMoving)
-        {
-            Chase();
-        }else
-            if(enemyState == EnemyState.isAttack)
-            {
-                //Fazer o attack
-                rb.linearVelocity = Vector2.zero;
-                ChangeState(EnemyState.isAttack);
+
+        if(enemyState!=EnemyState.isKnowBack){
+            CheckForPlayer();
+            if(attackCoolDownTimer > 0){
+                attackCoolDownTimer-= Time.deltaTime;
             }
+
+            if (enemyState == EnemyState.isMoving)
+            {
+                Chase();
+            }else if(enemyState == EnemyState.isAttack)
+            {
+                // não faz nada
+                rb.linearVelocity =  Vector2.zero;
+                ChangeState(EnemyState.isAttack);
+                
+            }
+        }
     }
-
-
-    void Chase() {
-
-        if(Vector2.Distance(transform.position,player.position) <= attackRange){
-            ChangeState(EnemyState.isAttack);
-        }else
+    void Chase()
+    {
         if(player.position.x > transform.position.x && facingDirection == -1 || 
                player.position.x < transform.position.x && facingDirection == 1){
-                Flip();
-
+               Flip();
             }
             Vector2 direction = (player.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
-
     }
 
     void Flip()
@@ -77,28 +80,39 @@ public class EnemyMovement : MonoBehaviour
         facingDirection *= -1;
         transform.localScale = new Vector3(facingDirection,transform.localScale.y,transform.localScale.z);
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
+ 
+    private void CheckForPlayer()
     {
-        if (collision.CompareTag("Player"))
+        Collider2D[] hits = Physics2D.OverlapCircleAll(detectkPoint.position,playerDetectRange,playerLayer);
+       
+        if(hits.Length > 0)
         {
-         
-            if (player == null)
+            player = hits[0].transform;
+            
+            if(Vector2.Distance(transform.position,player.position) < attackRange && attackCoolDownTimer <=0)
             {
-                player = collision.transform;
-            }
-            ChangeState(EnemyState.isMoving);
+                attackCoolDownTimer = attackCoolDown;
+                ChangeState(EnemyState.isAttack);
+            }else if(Vector2.Distance(transform.position,player.position) > attackRange && enemyState != EnemyState.isAttack)
+                ChangeState(EnemyState.isMoving);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
+        else{
             rb.linearVelocity = Vector2.zero;
-        }
-        ChangeState(EnemyState.isIdle);
+            ChangeState(EnemyState.isIdle);
+        }      
     }
+    
+    private void OnDrawGizmos()
+    {
+       if (detectkPoint == null) return;
+
+        // Fica vermelho se detectar um Player, ou verde quando a área estiver livre
+        Gizmos.color = player ? Color.aquamarine : Color.black;
+
+        // Desenha o círculo exato do OverlapCircleAll
+        Gizmos.DrawWireSphere(detectkPoint.position, playerDetectRange);
+    }
+    
 }
 
 public enum EnemyState
@@ -106,5 +120,6 @@ public enum EnemyState
     isIdle,
     isMoving,
     isAttack,
+    isKnowBack,
     isDefault
 }
