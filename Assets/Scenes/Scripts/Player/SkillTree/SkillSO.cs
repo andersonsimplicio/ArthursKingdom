@@ -20,4 +20,10 @@ public class SkillSO : ScriptableObject
         get { return this.maxLevel;} 
         set { this.maxLevel = value;} 
     }
+
+    public String _skillName
+    {
+        get { return this.skillName;} 
+        set { this.skillName = value;} 
+    }
 }

@@ -15,6 +15,12 @@ public class SkillSlot : MonoBehaviour{
     public static event Action<SkillSlot> OnAbilityPointsSpent; 
     public static event Action<SkillSlot> OnSkillMaxed; 
 
+
+    public SkillSO _skillSO
+    {
+        get{return skillSO; }
+    }
+    
     public bool _isUnlocked
     {
         get { return this.isUnlocked;}

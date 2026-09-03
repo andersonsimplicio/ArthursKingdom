@@ -1,8 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ExpManager : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class ExpManager : MonoBehaviour
     [SerializeField] float expGrowthMultipler = 1.3f;
     [SerializeField] Slider expSlider;
     [SerializeField] TMP_Text currentTextLevel;
+
+    public static event Action<int> OnLevelUp;
 
 
 
@@ -30,6 +32,7 @@ public class ExpManager : MonoBehaviour
         currentExp-=expToLevel;
         expToLevel = Mathf.RoundToInt(expToLevel*expGrowthMultipler);
         StatsManager.instance.Damage+=5;
+        OnLevelUp?.Invoke(1);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,7 +64,4 @@ public class ExpManager : MonoBehaviour
     {
         EnemyHeath.OnMonterDefeated -= GainExperience;
     }
-
-
- 
 }

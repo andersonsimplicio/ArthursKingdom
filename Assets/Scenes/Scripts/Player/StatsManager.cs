@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class StatsManager : MonoBehaviour
 {
 
     public static StatsManager instance;
+     [SerializeField] private TMP_Text healthText;
 
     [Header("Estatistica de Combate")]
     [SerializeField] private float weaponRange = 1f;
@@ -104,5 +106,11 @@ public class StatsManager : MonoBehaviour
         set => coolDown = value;
     }
 
+
+    public void UpdateMaxHealth(int amount)
+    {
+        maxHealth+=amount;
+        healthText.text =  "HP: "+ health +" / "+maxHealth;
+    }
 
 }
