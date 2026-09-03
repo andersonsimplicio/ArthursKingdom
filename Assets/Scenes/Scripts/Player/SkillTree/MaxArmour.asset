@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed80ebd46df24d54595518c738923b1b, type: 3}
-  m_Name: MaxHealthBoot
+  m_Name: MaxArmour
   m_EditorClassIdentifier: Assembly-CSharp::SkillSO
-  skillName: MaxHealthBoot
+  skillName: MaxArmour
   maxLevel: 5
-  skillIcon: {fileID: 5461583279877749565, guid: 52f99c57d3028944292161ad0b4012a9, type: 3}
+  skillIcon: {fileID: 5237681894992149705, guid: d45003b19e8988747a404b47bf55fdf6, type: 3}

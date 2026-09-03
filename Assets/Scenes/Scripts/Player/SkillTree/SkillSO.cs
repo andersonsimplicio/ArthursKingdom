@@ -8,6 +8,8 @@ public class SkillSO : ScriptableObject
     [SerializeField] private int  maxLevel;
     [SerializeField] private Sprite  skillIcon;
 
+
+
     public Sprite _skillIcon
     {
         get { return this.skillIcon;} 
