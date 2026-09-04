@@ -19,6 +19,7 @@ public class StatsUI : MonoBehaviour
     {
         updateDamage();
         updateSpeed();
+        updatePlateAmour();
     }
     public void updateDamage()
     {
@@ -27,6 +28,11 @@ public class StatsUI : MonoBehaviour
     public void updateSpeed()
     {
          statsSlots[1].GetComponentInChildren<TMP_Text>().text = $"Speed: {StatsManager.instance.Speed}";
+    }
+
+    public void updatePlateAmour()
+    {
+         statsSlots[2].GetComponentInChildren<TMP_Text>().text = $"Armor: {StatsManager.instance.PlateArmor}";
     }
 
     public void Update()

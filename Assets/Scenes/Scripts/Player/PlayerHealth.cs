@@ -17,11 +17,12 @@ public class PlayerHealth : MonoBehaviour
     
     public void ChangeHealth(int amount)
     {
-        StatsManager.instance.Health +=amount;
+        StatsManager.instance.Health +=(amount + StatsManager.instance.PlateArmor);
         healthText.text = "HP: "+ StatsManager.instance.Health +" / "+StatsManager.instance.MaxHealth;
         healthTextAnimator.Play(lifeHash);
         if(StatsManager.instance.Health <= 0)
         {
+            healthText.text = "HP: "+ 0 +" / "+StatsManager.instance.MaxHealth;
             player.gameObject.SetActive(false);
         }
     }

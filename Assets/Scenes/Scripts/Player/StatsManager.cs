@@ -4,9 +4,9 @@ using UnityEngine;
 public class StatsManager : MonoBehaviour
 {
 
-    public static StatsManager instance;
+     public static StatsManager instance;
      [SerializeField] private TMP_Text healthText;
-
+    
     [Header("Estatistica de Combate")]
     [SerializeField] private float weaponRange = 1f;
     
@@ -26,6 +26,7 @@ public class StatsManager : MonoBehaviour
     [Header("Estatistica de Saúde ")]
     [SerializeField] private int health = 100;
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int plateArmor = 1;
     
 
        private void Awake()
@@ -106,11 +107,21 @@ public class StatsManager : MonoBehaviour
         set => coolDown = value;
     }
 
+    public int PlateArmor
+    {
+        get{ return plateArmor; }
+        set{ plateArmor = value;}
+    }
+
 
     public void UpdateMaxHealth(int amount)
     {
         maxHealth+=amount;
         healthText.text =  "HP: "+ health +" / "+maxHealth;
+    }
+    public void UpdateMaxArmor(int amount)
+    {
+        plateArmor+=amount;
     }
 
 }
