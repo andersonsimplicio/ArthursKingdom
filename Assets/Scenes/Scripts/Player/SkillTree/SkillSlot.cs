@@ -3,10 +3,13 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Collections.Generic;
+
+
 public class SkillSlot : MonoBehaviour{
-    [SerializeField] List<SkillSlot> prerequisitesSkillSlots;
+   [SerializeField] List<SkillSlot> prerequisitesSkillSlots;
    [SerializeField] SkillSO skillSO;
    [SerializeField] int leveAtual;
+   [SerializeField] int valorLevelPoints;
    [SerializeField] bool isUnlocked;
    [SerializeField] Button skillButton;
    [SerializeField] Image skillIcon;
@@ -15,7 +18,10 @@ public class SkillSlot : MonoBehaviour{
     public static event Action<SkillSlot> OnAbilityPointsSpent; 
     public static event Action<SkillSlot> OnSkillMaxed; 
 
-
+    public int ValorLevelPoints
+    {
+        get{return valorLevelPoints; }
+    }
     public SkillSO _skillSO
     {
         get{return skillSO; }

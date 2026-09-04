@@ -995,6 +995,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4632131584819206428, guid: 6bd8e5434ba93494181222ac23a9d72c, type: 3}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name
       value: SkillIce
@@ -2382,6 +2398,10 @@ PrefabInstance:
       propertyPath: skillLevelText
       value: 
       objectReference: {fileID: 518806115}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
@@ -4287,6 +4307,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6734237056663082788, guid: 5882c875d1520444c8a6670fce470114, type: 3}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name
       value: SkillFire
@@ -4609,6 +4645,14 @@ PrefabInstance:
       propertyPath: skillLevelText
       value: 
       objectReference: {fileID: 1199509012}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevePoints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
@@ -5108,6 +5152,10 @@ PrefabInstance:
       propertyPath: skillLevelText
       value: 
       objectReference: {fileID: 504252353}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
@@ -6599,6 +6647,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 537928090}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevePoints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -6912,6 +6968,10 @@ PrefabInstance:
       propertyPath: skillLevelText
       value: 
       objectReference: {fileID: 636927006}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
@@ -7255,6 +7315,14 @@ PrefabInstance:
       propertyPath: skillLevelText
       value: 
       objectReference: {fileID: 1858530924}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevePoints
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
@@ -7884,6 +7952,7 @@ GameObject:
   - component: {fileID: 1560741465}
   - component: {fileID: 1560741466}
   - component: {fileID: 1560741467}
+  - component: {fileID: 1560741468}
   m_Layer: 31
   m_Name: SkillsCanvas
   m_TagString: Untagged
@@ -7985,7 +8054,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &1560741466
 MonoBehaviour:
@@ -8038,6 +8107,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fd848653506e34b8aff216b630cb19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillsManager
+--- !u!114 &1560741468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560741460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6e6b4be4ec0a444b3a54bb0cd0434d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToggleSkillTree
+  statsCanvas: {fileID: 1560741465}
 --- !u!1001 &1578416939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8358,6 +8440,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 456767350700619442, guid: ba1842b3817a69744a1eba38e8e166e7, type: 3}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name
       value: SkillThunder
@@ -16639,6 +16737,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1979857143}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17446,6 +17548,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4120125647123437198}
     - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevePoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: valorLevelPoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909703675901671478, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: prerequisitesSkillSlots.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17487,19 +17597,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Color.b
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Color.g
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Color.r
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name

@@ -19,7 +19,13 @@ public class SkillsManager : MonoBehaviour
         switch (skillName)
         {
             case "MaxHealthBoot":
-                StatsManager.instance.UpdateMaxHealth(5);
+                int health_value = 4 + slot.ValorLevelPoints;
+                StatsManager.instance.UpdateMaxHealth(health_value);
+
+            break;
+            case "PlateArmor":
+                int Armor_value = 2 + slot.ValorLevelPoints;
+                StatsManager.instance.UpdateMaxArmor(Armor_value);
 
             break;
             default:

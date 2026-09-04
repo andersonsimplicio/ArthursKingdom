@@ -10,7 +10,8 @@ public class ExpManager : MonoBehaviour
     [SerializeField] int level=0;
     [SerializeField] int currentExp;
     [SerializeField] int expToLevel = 10;
-    [SerializeField] float expGrowthMultipler = 1.3f;
+    //Custo para subir para o proximo nivel
+    [SerializeField] float expGrowthMultipler = 1.0f;
     [SerializeField] Slider expSlider;
     [SerializeField] TMP_Text currentTextLevel;
 
@@ -30,8 +31,9 @@ public class ExpManager : MonoBehaviour
     {
         level++;
         currentExp-=expToLevel;
-        expToLevel = Mathf.RoundToInt(expToLevel*expGrowthMultipler);
-        StatsManager.instance.Damage+=5;
+        //expToLevel = Mathf.RoundToInt(expToLevel*expGrowthMultipler);
+        expToLevel = Mathf.RoundToInt(expToLevel);
+        //StatsManager.instance.Damage+=5;
         OnLevelUp?.Invoke(1);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

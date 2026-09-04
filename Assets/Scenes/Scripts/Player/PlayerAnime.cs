@@ -19,7 +19,7 @@ public class PlayerAnime : MonoBehaviour
     {
         OnMove();
         OnRun();
-        if (Mouse.current.leftButton.wasPressedThisFrame){
+        if (Mouse.current.leftButton.wasPressedThisFrame && playerCombat.enabled == true){
             playerCombat.attack();
         }
            

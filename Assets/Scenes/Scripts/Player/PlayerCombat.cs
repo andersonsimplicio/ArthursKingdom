@@ -12,7 +12,7 @@ private static readonly int attackHash = Animator.StringToHash("isAttack");
 private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
 
     void FixedUpdate(){
-        if(StatsManager.instance.Timer > 0)
+        if(StatsManager.instance.Timer > 0 )
         {
             StatsManager.instance.Timer-=Time.deltaTime;
         }

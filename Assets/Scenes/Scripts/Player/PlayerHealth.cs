@@ -17,7 +17,18 @@ public class PlayerHealth : MonoBehaviour
     
     public void ChangeHealth(int amount)
     {
-        StatsManager.instance.Health +=(amount + StatsManager.instance.PlateArmor);
+        if(amount < 0)
+        {
+            float damage = Mathf.Abs(amount);
+            float armor = StatsManager.instance.PlateArmor;
+            float damageMultiplier = 1f / (1f + armor * 0.05f);
+            int finalDamage = Mathf.CeilToInt(damage * damageMultiplier);
+            StatsManager.instance.Health = Mathf.Max(0, StatsManager.instance.Health - finalDamage);
+            
+        }else{
+             StatsManager.instance.Health +=amount;
+        }
+       
         healthText.text = "HP: "+ StatsManager.instance.Health +" / "+StatsManager.instance.MaxHealth;
         healthTextAnimator.Play(lifeHash);
         if(StatsManager.instance.Health <= 0)
