@@ -10,7 +10,7 @@ public class ExpManager : MonoBehaviour
     [SerializeField] int level=0;
     [SerializeField] int currentExp;
     [SerializeField] int expToLevel = 10;
-    [SerializeField] float expGrowthMultipler = 1.3f;
+    [SerializeField] float expGrowthMultipler = 1.0f;
     [SerializeField] Slider expSlider;
     [SerializeField] TMP_Text currentTextLevel;
 
@@ -54,6 +54,7 @@ public class ExpManager : MonoBehaviour
         expSlider.maxValue = expToLevel;
         expSlider.value = currentExp;
         currentTextLevel.text = $"Level: {level} "; 
+        //OnLevelUp?.Invoke(1);
     }
 
     private void OnEnable()

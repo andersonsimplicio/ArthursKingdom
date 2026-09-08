@@ -110,7 +110,14 @@ public class StatsManager : MonoBehaviour
     public void UpdateMaxHealth(int amount)
     {
         maxHealth+=amount;
-        healthText.text =  "HP: "+ health +" / "+maxHealth;
+        healthText.text =  $"HP: {health} / {maxHealth}";
+    }
+    public void UpdateHealth(int amount)
+    {
+        health+=amount;
+        if(health > maxHealth)
+            health = maxHealth;
+        healthText.text =  $"HP: {health} / {maxHealth}";
     }
 
 }
