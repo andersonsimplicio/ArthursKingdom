@@ -6,6 +6,7 @@ public class StatsManager : MonoBehaviour
 
     public static StatsManager instance;
      [SerializeField] private TMP_Text healthText;
+     [SerializeField] private TMP_Text armourText;
 
     [Header("Estatistica de Combate")]
     [SerializeField] private float weaponRange = 1f;
@@ -13,7 +14,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private float knowBackForce = 3;
     [SerializeField] private float knowBackTimer = 0.15f;
     [SerializeField] private float stuntimer = 0.3f;
-    [SerializeField] private int damage = 10;
+    [SerializeField] private int damage = 15;
     [SerializeField] private float timer = 1f;
     [SerializeField] private float coolDown = 1f;
 
@@ -26,6 +27,7 @@ public class StatsManager : MonoBehaviour
     [Header("Estatistica de Saúde ")]
     [SerializeField] private int health = 100;
     [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int plateArmour = 1;
     
 
        private void Awake()
@@ -104,6 +106,17 @@ public class StatsManager : MonoBehaviour
     {
         get => coolDown;
         set => coolDown = value;
+    }
+    public int PlateArmour
+    {
+        get {return plateArmour; }
+        set {plateArmour = value; }
+    }
+
+    public void UpdateArmour(int amount)
+    {
+        plateArmour+=amount;
+        armourText.text = $"Armour: {plateArmour}";
     }
 
 

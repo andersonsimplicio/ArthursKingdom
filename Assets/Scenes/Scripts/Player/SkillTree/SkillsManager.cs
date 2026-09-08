@@ -22,6 +22,12 @@ public class SkillsManager : MonoBehaviour
                 StatsManager.instance.UpdateMaxHealth(5);
                 StatsManager.instance.UpdateHealth(5);                    
             break;
+            case "MaxArmour":
+                StatsManager.instance.UpdateArmour(1);
+                StatsManager.instance.UpdateHealth(5);                    
+            break;
+
+
 
             default:
                Debug.LogWarning($"Skill não encontrada {skillName}");
