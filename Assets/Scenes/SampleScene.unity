@@ -2784,6 +2784,10 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 7429502543319007349
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
     - rid: 9048492042198712521
       type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data:
@@ -2791,7 +2795,7 @@ MonoBehaviour:
         m_SelectedSource:
           rid: -2
         m_Provider2DCache:
-          rid: -2
+          rid: 7429502543319007349
 --- !u!4 &619394802
 Transform:
   m_ObjectHideFlags: 0
@@ -4670,7 +4674,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933289012}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -5382,6 +5386,7 @@ MonoBehaviour:
   health: 20
   maxHealth: 20
   plateArmour: 1
+  plateArmourMax: 20
 --- !u!4 &985631450
 Transform:
   m_ObjectHideFlags: 0
@@ -7986,6 +7991,7 @@ GameObject:
   - component: {fileID: 1560741465}
   - component: {fileID: 1560741466}
   - component: {fileID: 1560741467}
+  - component: {fileID: 1560741468}
   m_Layer: 31
   m_Name: SkillsCanvas
   m_TagString: Untagged
@@ -8140,6 +8146,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fd848653506e34b8aff216b630cb19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillsManager
+--- !u!114 &1560741468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560741460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6acc6faf439a8479fa794623b3529b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToggleSkillTree
+  statsCanvas: {fileID: 1560741465}
 --- !u!224 &1612730439 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2314728832089934763, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}

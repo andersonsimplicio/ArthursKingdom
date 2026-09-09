@@ -20,10 +20,10 @@ public class PlayerHealth : MonoBehaviour
 
         if(amount < 0)
         {
-            StatsManager.instance.Health +=amount * (Math.Abs(amount)/( Math.Abs(amount)+StatsManager.instance.PlateArmour));
+            int dano = CalculoDano(amount);
+            StatsManager.instance.Health +=(dano);
         }
-        else
-        {
+        else{
             StatsManager.instance.Health +=amount;
         }
             
@@ -34,4 +34,14 @@ public class PlayerHealth : MonoBehaviour
             player.gameObject.SetActive(false);
         }
     }
+
+    public int CalculoDano(int danoRecebido)
+    {
+        float procentagem = StatsManager.instance.PlateArmour/(float)StatsManager.instance.PlateArmourMax;
+        float dano = danoRecebido * (1f - procentagem * 0.8f);       
+        dano = (int) Math.Round(dano, MidpointRounding.AwayFromZero);
+       
+        return (int) dano;
+    }
+
 }

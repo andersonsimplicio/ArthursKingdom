@@ -28,7 +28,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int plateArmour = 1;
-    
+     [SerializeField] private int plateArmourMax = 20;
 
        private void Awake()
         {
@@ -111,6 +111,11 @@ public class StatsManager : MonoBehaviour
     {
         get {return plateArmour; }
         set {plateArmour = value; }
+    }
+    public int PlateArmourMax
+    {
+        get {return plateArmourMax; }
+        set {plateArmourMax = value; }
     }
 
     public void UpdateArmour(int amount)
