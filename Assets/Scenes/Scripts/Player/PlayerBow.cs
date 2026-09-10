@@ -1,27 +1,63 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBow : MonoBehaviour
 {
     [SerializeField] private Transform launchPoint;
     [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private Vector2 aimDirection = Vector2.right;
 
+  
 
-
-
-
-    void Start()
+    private void Update()
     {
-        
+        HandheldAiming();
+
+        if (Keyboard.current != null &&
+            Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            Shoot();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandheldAiming()
     {
-        Shoot();
+        Vector2 input = Vector2.zero;
+
+        if (Keyboard.current == null)
+            return;
+
+        if (Keyboard.current.aKey.isPressed)
+            input.x = -1;
+
+        if (Keyboard.current.dKey.isPressed)
+            input.x = 1;
+
+        if (Keyboard.current.wKey.isPressed)
+            input.y = 1;
+
+        if (Keyboard.current.sKey.isPressed)
+            input.y = -1;
+
+        if (input != Vector2.zero)
+        {
+            aimDirection = input.normalized;
+
+            // Move o LaunchPoint na direção da mira
+           launchPoint.localPosition =  (Vector3)aimDirection * 1.0f;
+        }
     }
 
-    public void Shoot()
+    private void Shoot()
     {
-        Instantiate(arrowPrefab,launchPoint.position,Quaternion.identity);
+     GameObject arrowObject = Instantiate(
+        arrowPrefab,
+        launchPoint.position,
+        Quaternion.identity
+    );
+
+    Arrow arrow = arrowObject.GetComponent<Arrow>();
+
+    arrow.SetDirection(aimDirection);
     }
 }
