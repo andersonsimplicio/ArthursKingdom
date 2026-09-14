@@ -13,9 +13,7 @@ public class PlayerBow : MonoBehaviour
     {
         HandheldAiming();
 
-        if (Keyboard.current != null &&
-            Keyboard.current.cKey.wasPressedThisFrame)
-        {
+        if (Keyboard.current != null && Keyboard.current.cKey.wasPressedThisFrame){
             Shoot();
         }
     }
