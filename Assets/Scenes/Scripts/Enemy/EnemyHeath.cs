@@ -9,7 +9,10 @@ public class EnemyHeath : MonoBehaviour
     public delegate void MonsterDefeated(int exp);
      public static event MonsterDefeated OnMonterDefeated;
 
-
+    public int Health
+    {
+        get { return health;}
+    }
 
     public void Start()
     {

@@ -7847,7 +7847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBow
   launchPoint: {fileID: 1550156654}
-  arrowPrefab: {fileID: 3847119420631563916, guid: 5f8e359a5b66c454da45e889fb3e4843, type: 3}
+  arrowPrefab: {fileID: 2061470284006125045, guid: a80e46d04ddc99e4987a9ed09d01df69, type: 3}
   aimDirection: {x: 1, y: 0}
 --- !u!1001 &1560017878
 PrefabInstance:
