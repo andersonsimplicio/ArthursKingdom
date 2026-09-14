@@ -18,18 +18,7 @@ public class PlayerBow : MonoBehaviour
         }
     }
 
-    private void HandheldAiming()
-    {
-         shootTimer -= Time.deltaTime;   
-         HandheldAiming();
-        
-        if (Keyboard.current != null &&  Keyboard.current.cKey.wasPressedThisFrame && shootTimer <=0){
-            Shoot();
-            
-         }
-
-    }
-
+   
     private void Shoot()
     {
             GameObject arrowObject = Instantiate(arrowPrefab,launchPoint.position,Quaternion.identity);
