@@ -12,10 +12,10 @@ public class EnemyKnowBack : MonoBehaviour
         enemyMovement = GetComponent<EnemyMovement>();
     }
 
-    public void knowBack(Transform playerTransform, float knowBackForce,float  knowBackTimer, float stunTime){
+    public void knowBack(Transform forceTransform, float knowBackForce,float  knowBackTimer, float stunTime){
         enemyMovement.ChangeState(EnemyState.isKnowBack);
         StartCoroutine(StunTimer(knowBackTimer,stunTime));
-        Vector2 direction  = (transform.position - playerTransform.position ).normalized;
+        Vector2 direction  = (transform.position - forceTransform.position ).normalized;
         rb.linearVelocity = direction * knowBackForce;
         
         Debug.Log("Aplicou recuo!");

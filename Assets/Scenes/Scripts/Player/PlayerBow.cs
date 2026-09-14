@@ -6,7 +6,8 @@ public class PlayerBow : MonoBehaviour
     [SerializeField] private Transform launchPoint;
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Vector2 aimDirection = Vector2.right;
-
+    [SerializeField] private float shootCoolDown = 0.5f;
+    [SerializeField] private float shootTimer;
 
 
 
@@ -19,20 +20,22 @@ public class PlayerBow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         shootTimer -= Time.deltaTime;   
          HandheldAiming();
         
-        if (Keyboard.current != null &&  Keyboard.current.cKey.wasPressedThisFrame){
+        if (Keyboard.current != null &&  Keyboard.current.cKey.wasPressedThisFrame && shootTimer <=0){
             Shoot();
+            
          }
 
     }
 
-    public void Shoot()
+    private void Shoot()
     {
-        Instantiate(arrowPrefab,launchPoint.position,Quaternion.identity);
-        Arrow arrow = arrowPrefab.GetComponent<Arrow>();
-        arrow.SetDirection(aimDirection);
-
+            GameObject arrowObject = Instantiate(arrowPrefab,launchPoint.position,Quaternion.identity);
+            Arrow arrow = arrowObject.GetComponent<Arrow>();
+            arrow.SetDirection(aimDirection);
+            shootTimer = shootCoolDown;
     }
 
     private void HandheldAiming()
