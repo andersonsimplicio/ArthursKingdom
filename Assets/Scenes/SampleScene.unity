@@ -1757,6 +1757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_lancer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4557,6 +4561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_lancer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5994,6 +6002,10 @@ PrefabInstance:
     - target: {fileID: 2346796146730076469, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
       propertyPath: m_Name
       value: Enemy_lancer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: health
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7520,6 +7532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_lancer (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7849,6 +7865,8 @@ MonoBehaviour:
   launchPoint: {fileID: 1550156654}
   arrowPrefab: {fileID: 2061470284006125045, guid: a80e46d04ddc99e4987a9ed09d01df69, type: 3}
   aimDirection: {x: 1, y: 0}
+  shootCoolDown: 0.5
+  shootTimer: 0
 --- !u!1001 &1560017878
 PrefabInstance:
   m_ObjectHideFlags: 0

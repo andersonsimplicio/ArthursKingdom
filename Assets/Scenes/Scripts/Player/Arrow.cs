@@ -16,6 +16,7 @@ public class Arrow : MonoBehaviour{
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Sprite buriedSprite;
 
 
 
@@ -41,13 +42,23 @@ public class Arrow : MonoBehaviour{
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.LogWarning( $" Saude: {collision.gameObject.GetComponent<EnemyHeath>().Health}");
-
         if ( (enemyLayer.value & (1<< collision.gameObject.layer)) > 0){
             collision.gameObject.GetComponent<EnemyHeath>().ChangeHealth(-damage);
             collision.gameObject.GetComponent<EnemyKnowBack>().knowBack(transform,knockBackForce,knockBackTime,stunTime);
-            Debug.LogWarning( $" Saude: {collision.gameObject.GetComponent<EnemyHeath>().Health}");
+            AttachToTarget(collision.gameObject.transform);
         }
-        
+        else{
+            if((obstacleLayer.value & (1<< collision.gameObject.layer)) > 0){
+                AttachToTarget(collision.gameObject.transform);
+            }
+        }
+    }
+
+    public void AttachToTarget(Transform target)
+    {
+        sr.sprite = buriedSprite;
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        transform.SetParent(target);
     }
 }
