@@ -14,6 +14,9 @@ public class Arrow : MonoBehaviour{
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Vector2 direction = Vector2.right;
     [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] private SpriteRenderer sr;
+
 
 
 
