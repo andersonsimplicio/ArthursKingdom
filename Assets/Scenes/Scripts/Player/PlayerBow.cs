@@ -77,10 +77,10 @@ public class PlayerBow : MonoBehaviour
             anim.SetFloat(aimYHash, aimDirection.y);
         }else{
             if (aimDirection == Vector2.zero){
-            aimDirection = Vector2.right;
-            launchPoint.localPosition = new Vector3(1.0f, 0f, 0f);
-            anim.SetFloat(aimXHash, 1.0f);
-            anim.SetFloat(aimYHash, 0f);
+                aimDirection = Vector2.right;
+                launchPoint.localPosition = new Vector3(1.0f, 0f, 0f);
+                anim.SetFloat(aimXHash, 1.0f);
+                anim.SetFloat(aimYHash, 0f);
             }
         }
     }

@@ -183,7 +183,7 @@ MonoBehaviour:
   damage: 5
   lifeSpawn: 2
   speed: 15
-  knockBackForce: 10
+  knockBackForce: 3
   knockBackTime: 0.5
   stunTime: 1
   rb: {fileID: 7779866203735455002}
