@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,10 +10,18 @@ public class Player : MonoBehaviour
    [SerializeField] private Vector2 direction;
    [SerializeField] private bool isRunning =false;    
    [SerializeField] private bool isKockBack;
+   [SerializeField] private bool isShooting;
     // Novo
     [SerializeField] private bool isAttacking = false;  
     private Rigidbody2D rig; 
-   
+    
+
+    public bool IsShooting
+    {
+        set{ isShooting = value; }
+        get{ return isShooting; }
+    }
+
     public Vector2 _direction{
         get { return this.direction;} 
         set { this.direction = value;} 
@@ -44,12 +53,15 @@ public class Player : MonoBehaviour
   #region Movimento
 
     private void FixedUpdate(){
-        if (isAttacking || isKockBack)
-        {
+        if(isShooting == true){
             rig.linearVelocity = Vector2.zero;
-            return;
-        }
-        OnMove();
+        }else{
+            if (isAttacking || isKockBack){
+                rig.linearVelocity = Vector2.zero;
+                return;
+            }
+            OnMove();
+        }       
     }
 
     void OnMove()

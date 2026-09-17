@@ -16,7 +16,7 @@ public class EnemyHeath : MonoBehaviour
 
     public void Start()
     {
-        maxHealth = 50;
+        maxHealth = 20;
         health = maxHealth;
     }
 

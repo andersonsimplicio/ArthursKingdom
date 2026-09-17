@@ -8,15 +8,14 @@ public class PlayerBow : MonoBehaviour
     [SerializeField] private Vector2 aimDirection = Vector2.right;
     [SerializeField] private float shootCoolDown = 0.5f;
     [SerializeField] private float shootTimer;
+    [SerializeField] private Animator anim;
+    [SerializeField] private Player player;
 
     private static readonly int isShootingHash = Animator.StringToHash("isShooting");
     private static readonly int aimXHash = Animator.StringToHash("aimX");
     private static readonly int aimYHash = Animator.StringToHash("aimY");
 
-    private static readonly int attackHash = Animator.StringToHash("isAttack");
-    private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
-
-    [SerializeField] private Animator anim;
+    
 
     void Start()
     {
@@ -34,30 +33,29 @@ public class PlayerBow : MonoBehaviour
         anim.SetLayerWeight(0,1);
         anim.SetLayerWeight(1,0);
     }
-    // Update is called once per frame
+    
     void Update()
     {
          shootTimer -= Time.deltaTime;   
          HandheldAiming();
         
         if (Keyboard.current != null &&  Keyboard.current.cKey.wasPressedThisFrame && shootTimer <=0){
-            AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
-            Debug.Log($"Hash: {state.fullPathHash}");
-            Debug.Log($"Nome: {state.shortNameHash}");
-            Debug.Log($"Tempo normalizado: {state.normalizedTime}");
-            anim.SetBool(isShootingHash,true);
-           // Shoot();
+           player.IsShooting = true; 
+           anim.SetBool(isShootingHash,true);
          }
 
     }
 
-    private void Shoot()
-    {
+    private void Shoot(){
+
+        if(shootTimer <=0){
             GameObject arrowObject = Instantiate(arrowPrefab,launchPoint.position,Quaternion.identity);
             Arrow arrow = arrowObject.GetComponent<Arrow>();
             arrow.SetDirection(aimDirection);
             shootTimer = shootCoolDown;
-            anim.SetBool(isShootingHash,false);
+        }
+        anim.SetBool(isShootingHash,false);
+         player.IsShooting = false; 
     }
 
     private void HandheldAiming(){

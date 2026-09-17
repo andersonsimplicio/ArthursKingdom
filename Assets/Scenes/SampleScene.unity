@@ -1759,7 +1759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
       propertyPath: health
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: maxHealth
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4563,7 +4567,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
       propertyPath: health
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: maxHealth
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6005,7 +6013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
       propertyPath: health
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: maxHealth
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7534,7 +7546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
       propertyPath: health
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999455786541991458, guid: cf29bb2fffa77f94996088c1e49b73c8, type: 3}
+      propertyPath: maxHealth
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7606,6 +7622,7 @@ GameObject:
   - component: {fileID: 1556439531}
   - component: {fileID: 1556439532}
   - component: {fileID: 1556439533}
+  - component: {fileID: 1556439534}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -7665,6 +7682,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   isRunning: 0
   isKockBack: 0
+  isShooting: 0
   isAttacking: 0
 --- !u!212 &1556439523
 SpriteRenderer:
@@ -7839,7 +7857,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556439520}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8869f8ec77a6f342844b25fd5ff358f, type: 3}
   m_Name: 
@@ -7857,7 +7875,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556439520}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3648f0c8bf9b101499d17fc0abed0f60, type: 3}
   m_Name: 
@@ -7868,6 +7886,21 @@ MonoBehaviour:
   shootCoolDown: 0.5
   shootTimer: 0
   anim: {fileID: 1556439526}
+  player: {fileID: 1556439522}
+--- !u!114 &1556439534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556439520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8739c28b9c79b34a885f5c7755b84e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerChangeEquipment
+  combat: {fileID: 1556439532}
+  archer: {fileID: 1556439533}
 --- !u!1001 &1560017878
 PrefabInstance:
   m_ObjectHideFlags: 0
