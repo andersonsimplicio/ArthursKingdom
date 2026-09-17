@@ -9,14 +9,31 @@ public class PlayerBow : MonoBehaviour
     [SerializeField] private float shootCoolDown = 0.5f;
     [SerializeField] private float shootTimer;
 
+    private static readonly int isShootingHash = Animator.StringToHash("isShooting");
+    private static readonly int aimXHash = Animator.StringToHash("aimX");
+    private static readonly int aimYHash = Animator.StringToHash("aimY");
 
+    private static readonly int attackHash = Animator.StringToHash("isAttack");
+    private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
 
+    [SerializeField] private Animator anim;
 
     void Start()
     {
         
     }
 
+
+    private void OnEnable()
+    {
+        anim.SetLayerWeight(0,0);
+        anim.SetLayerWeight(1,1);
+    }
+    private void OnDisable()
+    {
+        anim.SetLayerWeight(0,1);
+        anim.SetLayerWeight(1,0);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +41,12 @@ public class PlayerBow : MonoBehaviour
          HandheldAiming();
         
         if (Keyboard.current != null &&  Keyboard.current.cKey.wasPressedThisFrame && shootTimer <=0){
-            Shoot();
-            
+            AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(0);
+            Debug.Log($"Hash: {state.fullPathHash}");
+            Debug.Log($"Nome: {state.shortNameHash}");
+            Debug.Log($"Tempo normalizado: {state.normalizedTime}");
+            anim.SetBool(isShootingHash,true);
+           // Shoot();
          }
 
     }
@@ -36,36 +57,31 @@ public class PlayerBow : MonoBehaviour
             Arrow arrow = arrowObject.GetComponent<Arrow>();
             arrow.SetDirection(aimDirection);
             shootTimer = shootCoolDown;
+            anim.SetBool(isShootingHash,false);
     }
 
-    private void HandheldAiming()
-    {
+    private void HandheldAiming(){
         Vector2 input = Vector2.zero;
-
         if (Keyboard.current == null)
             return;
-
-        if (Keyboard.current.aKey.isPressed)
-            input.x = -1;
-
-        if (Keyboard.current.dKey.isPressed)
-            input.x = 1;
-
-        if (Keyboard.current.wKey.isPressed)
-            input.y = 1;
-
-        if (Keyboard.current.sKey.isPressed)
-            input.y = -1;
-
-        if (input != Vector2.zero)
-        {
+        if (Keyboard.current.aKey.isPressed) input.x = -1;
+        if (Keyboard.current.dKey.isPressed) input.x = 1;
+        if (Keyboard.current.wKey.isPressed) input.y = 1;
+        if (Keyboard.current.sKey.isPressed) input.y = -1;
+    
+        if (input != Vector2.zero){
             aimDirection = input.normalized;
-
-            // Move o LaunchPoint na direção da mira
-           launchPoint.localPosition =  (Vector3)aimDirection * 1.0f;
+            launchPoint.localPosition = (Vector3)aimDirection * 1.0f;
+        
+            anim.SetFloat(aimXHash, aimDirection.x);
+            anim.SetFloat(aimYHash, aimDirection.y);
+        }else{
+            if (aimDirection == Vector2.zero){
+            aimDirection = Vector2.right;
+            launchPoint.localPosition = new Vector3(1.0f, 0f, 0f);
+            anim.SetFloat(aimXHash, 1.0f);
+            anim.SetFloat(aimYHash, 0f);
+            }
         }
     }
-
-
-
 }

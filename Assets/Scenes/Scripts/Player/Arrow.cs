@@ -19,9 +19,6 @@ public class Arrow : MonoBehaviour{
     [SerializeField] private Sprite buriedSprite;
 
 
-
-
-
     public void SetDirection(Vector2 newDirection)
     {
         direction = newDirection.normalized;

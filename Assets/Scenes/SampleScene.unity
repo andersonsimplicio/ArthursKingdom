@@ -7839,7 +7839,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556439520}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8869f8ec77a6f342844b25fd5ff358f, type: 3}
   m_Name: 
@@ -7867,6 +7867,7 @@ MonoBehaviour:
   aimDirection: {x: 1, y: 0}
   shootCoolDown: 0.5
   shootTimer: 0
+  anim: {fileID: 1556439526}
 --- !u!1001 &1560017878
 PrefabInstance:
   m_ObjectHideFlags: 0
