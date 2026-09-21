@@ -53,4 +53,4 @@ Archer-shoot-Up-Diag - 20 <-> 26
 Archer-shoot-right - 27<-> 34
 Archer-shoot-Down-Diag 35 <-> 42
 Archer-shoot-Down - 43 <-> 51
-Shop System (Part I): Collectable Items with Scriptable Objects			- https://www.youtube.com/watch?v=FqeaEzot3_4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=31
+Shop System (Part I): Collectable Items with Scriptable Objects			        - https://www.youtube.com/watch?v=FqeaEzot3_4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=31
