@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07725e8ab63c15e4d9199ceedd6e9d4b, type: 3}
+  m_Name: food
+  m_EditorClassIdentifier: Assembly-CSharp::ItenSo
+  itemName: Food
+  description: Comida (Cura +5)
+  icon: {fileID: 2690274267995810836, guid: 670f716d5b85981479264e98150ddd52, type: 3}
+  isGold: 0
+  currentHealth: 5
+  maxHealth: 0
+  speed: 0
+  damage: 0
+  duracao: 0
