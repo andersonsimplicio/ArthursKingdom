@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Loot : MonoBehaviour{
@@ -25,9 +24,4 @@ public class Loot : MonoBehaviour{
             Destroy(gameObject,.5f);
         }
     }
-
-
-
-
-
 }

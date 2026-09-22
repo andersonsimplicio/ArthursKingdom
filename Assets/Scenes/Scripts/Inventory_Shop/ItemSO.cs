@@ -27,8 +27,5 @@ public class ItenSo : ScriptableObject
     public String ItemName
     {
         get{return itemName;}
-    }
-
-
-    
+    }   
 }

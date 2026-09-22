@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: food
   m_EditorClassIdentifier: Assembly-CSharp::ItenSo
   itemName: Food
-  description: Comida (Cura +1)
+  description: Comida (Cura +5)
   icon: {fileID: 2690274267995810836, guid: 670f716d5b85981479264e98150ddd52, type: 3}
   isGold: 0
   currentHealth: 5
