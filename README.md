@@ -19,7 +19,6 @@ sistema de estatísticas no Unity (Parte III: conectando a interface do usuário
 Sistema de experiência e nivelamento no Unity                                   - https://www.youtube.com/watch?v=l6-nlk3njv4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=22
 Criando uma árvore de habilidades adaptáveis                                    - https://www.youtube.com/watch?v=8GBC_EC8uJE&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=23
 Parte I: A Interface do Usuário                                                 - https://www.youtube.com/watch?v=2wB6mMXnvTI&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=25
-<<<<<<< HEAD
 # ArthursKingdom
 Novo jogo
 
@@ -41,8 +40,6 @@ sistema de estatísticas no Unity (Parte III: conectando a interface do usuário
 Sistema de experiência e nivelamento no Unity                                   - https://www.youtube.com/watch?v=l6-nlk3njv4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=22
 Criando uma árvore de habilidades adaptáveis                                    - https://www.youtube.com/watch?v=8GBC_EC8uJE&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=23
 Parte I: A Interface do Usuário                                                 - https://www.youtube.com/watch?v=2wB6mMXnvTI&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=25
-=======
->>>>>>> inventario
 Parte II Árvore de Habilidades no Unity (Tutorial)
 Codificando as Habilidades e o Sistema :                                        - https://www.youtube.com/watch?v=85hNr2FuwGs&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=25
 Skill Tree In Unity (Tutorial) --- Part III: Finishing the System!              - https://www.youtube.com/watch?v=NzhTk0FgXkk&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=26
@@ -56,8 +53,5 @@ Archer-shoot-Up-Diag - 20 <-> 26
 Archer-shoot-right - 27<-> 34
 Archer-shoot-Down-Diag 35 <-> 42
 Archer-shoot-Down - 43 <-> 51
-<<<<<<< HEAD
 Shop System (Part I): Collectable Items with Scriptable Objects			        - https://www.youtube.com/watch?v=FqeaEzot3_4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=31
-=======
-Shop System (Part I): Collectable Items with Scriptable Objects			- https://www.youtube.com/watch?v=FqeaEzot3_4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=31
->>>>>>> inventario
+Shop System (Part II): Setting Up Our Inventory UI                              - https://www.youtube.com/watch?v=QcRP8PZ8Kz8&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=32
