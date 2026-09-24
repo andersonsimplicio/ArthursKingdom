@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07725e8ab63c15e4d9199ceedd6e9d4b, type: 3}
-  m_Name: wood
-  m_EditorClassIdentifier: Assembly-CSharp::ItenSo
-  itemName: Madeira
-  description: 
+  m_Name: Wood
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: Wood
+  description: Madeira
   icon: {fileID: 5700811930569161303, guid: a81e1e874fc9217498c71981ec692f56, type: 3}
-  isGold: 1
+  isGold: 0
   currentHealth: 0
   maxHealth: 0
   speed: 0

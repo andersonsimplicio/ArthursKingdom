@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 public class Loot : MonoBehaviour{
-    [SerializeField] ItenSo itemSO;
+    [SerializeField] ItemSO itemSO;
     [SerializeField] SpriteRenderer sr;
     [SerializeField] Animator anim;
     [SerializeField] int quantity;
 
-     private static readonly int lootPickaogHash = Animator.StringToHash("LootPickup");
+    public static event Action<ItemSO,int> OnItemLooted; 
+
+    private static readonly int lootPickaogHash = Animator.StringToHash("LootPickup");
 
     private void OnValidate(){
         if(itemSO==null ){
@@ -21,6 +24,7 @@ public class Loot : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.CompareTag("Player")){
             anim.Play(lootPickaogHash);
+            OnItemLooted?.Invoke(itemSO,quantity);
             Destroy(gameObject,.5f);
         }
     }

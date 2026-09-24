@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07725e8ab63c15e4d9199ceedd6e9d4b, type: 3}
-  m_Name: Gold
+  m_Name: Steak
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Gold
-  description: Ouro, move o mundo
-  icon: {fileID: 4765518676241773232, guid: 7c7525697240e0e4087be1981f53b506, type: 3}
-  isGold: 1
-  currentHealth: 0
+  itemName: Steak
+  description: Carne
+  icon: {fileID: 2690274267995810836, guid: 670f716d5b85981479264e98150ddd52, type: 3}
+  isGold: 0
+  currentHealth: 5
   maxHealth: 0
   speed: 0
   damage: 0

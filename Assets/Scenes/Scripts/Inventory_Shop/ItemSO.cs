@@ -2,12 +2,12 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Invetory/item")]
-public class ItenSo : ScriptableObject
+public class ItemSO : ScriptableObject
 {
-    [SerializeField] String itemName;
+    [SerializeField] private String itemName;
     [SerializeField] [TextArea]String description;
-    [SerializeField] Sprite icon;
-    [SerializeField] bool isGold;
+    [SerializeField] private Sprite icon;
+    [SerializeField] private bool isGold;
 
     [Header("Estatística")]
     [SerializeField]  int currentHealth;
@@ -28,4 +28,10 @@ public class ItenSo : ScriptableObject
     {
         get{return itemName;}
     }   
+
+    public bool IsGold{
+        set{ isGold = value; }
+        get{ return isGold; }
+    }
+
 }
