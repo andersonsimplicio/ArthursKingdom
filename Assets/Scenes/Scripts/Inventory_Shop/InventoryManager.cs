@@ -19,25 +19,36 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(ItemSO item,int quantidade)
     {
-        if (item.IsGold)
-        {
-            gold+=quantidade;
-            if(gold<10)
-                goldText.text = $"0{gold.ToString()}";
-            else
-                goldText.text = $"{gold.ToString()}";
-            return;
-        }else{          
-            if(item.IsGold==false)
-                foreach(var slot in itemSlots)
-                {
-                    if (slot._ItemSO == null)
+        if(item!=null){
+            if (item.IsGold)
+            {
+                gold+=quantidade;
+                if(gold<10)
+                    goldText.text = $"0{gold.ToString()}";
+                else
+                    goldText.text = $"{gold.ToString()}";
+                return;
+            }else{          
+                if(item.IsGold==false)
+                    foreach(var slot in itemSlots)
                     {
-                        slot._ItemSO = item;  
-                        slot.UpdateUI(quantidade);
-                        return;
-                    }              
-                }
+                        
+                        if (slot._ItemSO == null)
+                        {
+                            slot._ItemSO = item;  
+                            slot.UpdateUI(quantidade);
+                            return;
+                        }
+                        else{
+                            
+                            if (slot._ItemSO.ItemName.Equals(item.ItemName))
+                            {
+                                Debug.Log($"ItemSO Name: {slot._ItemSO.ItemName}");
+                            }
+                        }    
+                        
+                    }
+            }
         }
     }
 }

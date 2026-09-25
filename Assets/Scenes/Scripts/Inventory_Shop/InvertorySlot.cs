@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InvertorySlot : MonoBehaviour
 {
   [SerializeField] private ItemSO itemSO;
-  [SerializeField] private int quantidade;
+  [SerializeField] private int quantidade = 0;
   [SerializeField] private Image itemImage;
   [SerializeField] private TMP_Text quantityText;
 
@@ -13,10 +13,14 @@ public ItemSO _ItemSO{
         set{ itemSO = value;}
         get{ return itemSO; }
     }
+public int Quantidade{
+        get{return quantidade;}
+        set{quantidade=value;}
+    }
 
 
 public void UpdateUI(int quantidade){
-        this.quantidade = quantidade;
+        this.quantidade += quantidade;
         if (itemSO!= null)
         {
             itemImage.sprite = itemSO.Icon;
