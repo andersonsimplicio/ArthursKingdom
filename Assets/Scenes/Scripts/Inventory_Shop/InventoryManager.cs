@@ -6,6 +6,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private  int gold;
     [SerializeField] private  TMP_Text goldText;
     [SerializeField] private InvertorySlot[] itemSlots;
+    [SerializeField] private UserItem useItemController;
 
     public void OnEnable()
     {
@@ -38,17 +39,27 @@ public class InventoryManager : MonoBehaviour
                             slot._ItemSO = item;  
                             slot.UpdateUI(quantidade);
                             return;
-                        }
-                        else{
-                            
-                            if (slot._ItemSO.ItemName.Equals(item.ItemName))
-                            {
-                                Debug.Log($"ItemSO Name: {slot._ItemSO.ItemName}");
-                            }
-                        }    
+                        }   
                         
                     }
             }
         }
     }
+
+    public void useItem( InvertorySlot slot)
+    {
+        if(slot._ItemSO!=null && slot.Quantidade > 0)
+        {
+            Debug.Log($"Usando item: {slot._ItemSO.ItemName}");
+            useItemController.ApllyItemEffect(slot._ItemSO);
+            slot.Quantidade--;
+            if(slot.Quantidade <= 0)
+            {
+                slot._ItemSO = null;
+            }
+            slot.UpdateUI(0);
+        }
+    }
+
+
 }

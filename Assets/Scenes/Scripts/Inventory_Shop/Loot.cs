@@ -15,7 +15,6 @@ public class Loot : MonoBehaviour{
         if(itemSO==null ){
             return;
         }
-        Debug.LogWarning("Tá aqui!");
         sr.sprite = itemSO.Icon;
         this.name = itemSO.ItemName;
 

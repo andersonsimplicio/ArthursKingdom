@@ -56,3 +56,4 @@ Archer-shoot-Down - 43 <-> 51
 Shop System (Part I): Collectable Items with Scriptable Objects			        - https://www.youtube.com/watch?v=FqeaEzot3_4&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=31
 Shop System (Part II): Setting Up Our Inventory UI                              - https://www.youtube.com/watch?v=QcRP8PZ8Kz8&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=32
 Shop System (Part III): Filling the Inventory                                   - https://www.youtube.com/watch?v=RM_w5IR6bV0&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=33
+Sistema de Loja (Parte IV): Usando Itens                                        - https://www.youtube.com/watch?v=hDA893jOUH8&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=34
