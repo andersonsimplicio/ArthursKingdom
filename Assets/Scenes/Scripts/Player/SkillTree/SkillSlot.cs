@@ -4,7 +4,7 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 public class SkillSlot : MonoBehaviour{
-    [SerializeField] List<SkillSlot> prerequisitesSkillSlots;
+   [SerializeField] List<SkillSlot> prerequisitesSkillSlots;
    [SerializeField] SkillSO skillSO;
    [SerializeField] int leveAtual;
    [SerializeField] bool isUnlocked;

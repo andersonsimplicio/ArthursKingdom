@@ -20,29 +20,36 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(ItemSO item,int quantidade)
     {
+
+        if(item == null)
+            return;       
         if(item!=null){
-            if (item.IsGold)
-            {
+            if (item.IsGold){
                 gold+=quantidade;
                 if(gold<10)
                     goldText.text = $"0{gold.ToString()}";
                 else
                     goldText.text = $"{gold.ToString()}";
                 return;
-            }else{          
-                if(item.IsGold==false)
-                    foreach(var slot in itemSlots)
-                    {
-                        
-                        if (slot._ItemSO == null)
-                        {
-                            slot._ItemSO = item;  
-                            slot.UpdateUI(quantidade);
-                            return;
-                        }   
-                        
-                    }
             }
+
+            foreach (var slot in itemSlots){
+                if (slot._ItemSO == item){
+                    slot.Quantidade+=quantidade;
+                    slot.UpdateUI();
+                    return;
+                }
+            }
+
+             foreach (var slot in itemSlots){
+                if (slot._ItemSO == null){
+                    slot._ItemSO = item;
+                    slot.Quantidade+=quantidade;
+                    slot.UpdateUI();
+                    return;
+                }
+            }
+            Debug.Log("Inventário cheio!");
         }
     }
 
@@ -57,7 +64,7 @@ public class InventoryManager : MonoBehaviour
             {
                 slot._ItemSO = null;
             }
-            slot.UpdateUI(0);
+            slot.UpdateUI();
         }
     }
 

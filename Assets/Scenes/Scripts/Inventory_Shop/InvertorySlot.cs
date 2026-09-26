@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InvertorySlot : MonoBehaviour,IPointerClickHandler
+public class InvertorySlot : MonoBehaviour,IPointerClickHandler,
+    IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private ItemSO itemSO;
     [SerializeField] private int quantidade = 0;
@@ -11,10 +12,16 @@ public class InvertorySlot : MonoBehaviour,IPointerClickHandler
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private InventoryManager inventoryManager;
 
-    private void Start(){
-        inventoryManager = GetComponent<InventoryManager>();
+    
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("ENTROU NO SLOT");
     }
 
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("SAIU DO SLOT");
+    }
     public void OnPointerClick(PointerEventData eventData){
         Debug.Log("Clique detectado: " + eventData.button);
 
@@ -37,8 +44,7 @@ public class InvertorySlot : MonoBehaviour,IPointerClickHandler
     }
 
 
-    public void UpdateUI(int quantidade){
-        this.quantidade += quantidade;
+    public void UpdateUI(){
         if (itemSO!= null)
         {
             itemImage.sprite = itemSO.Icon;

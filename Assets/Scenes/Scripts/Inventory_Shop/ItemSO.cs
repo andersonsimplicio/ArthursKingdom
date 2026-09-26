@@ -10,10 +10,11 @@ public class ItemSO : ScriptableObject
     [SerializeField] private bool isGold;
 
     [Header("Estatística")]
-    [SerializeField]  int currentHealth;
-    [SerializeField]  int maxHealth;
-    [SerializeField]  int speed;
-    [SerializeField]  int damage;
+    [SerializeField]  private int currentHealth;
+    [SerializeField]  private int maxHealth;
+    [SerializeField]  private int speed;
+    [SerializeField]  private int damage;
+    [SerializeField]  private int armour;
 
     [Header("Duração")]
     [SerializeField]  float duracao;
@@ -28,10 +29,23 @@ public class ItemSO : ScriptableObject
     {
         get{return itemName;}
     }   
+    public int CurrentHealth
+    {
+        set{ currentHealth = value; }
+        get{return currentHealth; }
+    }
+     public int Armour
+    {
+        set{ armour = value; }
+        get{return armour; }
+    }
 
     public bool IsGold{
         set{ isGold = value; }
         get{ return isGold; }
     }
-
+     public float Durantion{
+        set{ duracao = value; }
+        get{ return duracao; }
+    }
 }

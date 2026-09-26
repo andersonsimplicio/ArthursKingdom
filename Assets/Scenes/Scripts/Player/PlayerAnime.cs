@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Player))]
@@ -10,19 +12,18 @@ public class PlayerAnime : MonoBehaviour
    private Animator animator;
    private static readonly int TransicaoHash = Animator.StringToHash("Transicao");
   [SerializeField] PlayerCombat playerCombat;
+
    public void Start()
     {
         player = GetComponent<Player>();
         animator = GetComponent<Animator>();
     }
+
     public void Update()
     {
-        OnMove();
+         OnMove();
         OnRun();
-        if (Mouse.current.leftButton.wasPressedThisFrame){
-            playerCombat.attack();
-        }
-           
+        HandleAttack();          
     }
     void OnMove()
     {
@@ -43,8 +44,21 @@ public class PlayerAnime : MonoBehaviour
     {
         if (player._isRunning && player._direction.sqrMagnitude > 0)
         {   
-             animator.SetInteger(TransicaoHash, 2);
+            animator.SetInteger(TransicaoHash, 2);
         }
+    }
+    private void HandleAttack()
+    {
+        if (Mouse.current == null)
+            return;
+
+        if (!Mouse.current.leftButton.wasPressedThisFrame)
+            return;
+
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        playerCombat.attack();
     }
 
     

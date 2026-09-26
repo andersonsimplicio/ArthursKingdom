@@ -1200,6 +1200,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4632131584819206428, guid: 6bd8e5434ba93494181222ac23a9d72c, type: 3}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name
       value: SkillIce
@@ -1568,7 +1584,7 @@ MonoBehaviour:
   quantidade: 0
   itemImage: {fileID: 1984783226}
   quantityText: {fileID: 1898514772}
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 411371531}
 --- !u!224 &302350618 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2314728832089934763, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
@@ -1712,6 +1728,7 @@ GameObject:
   - component: {fileID: 411371528}
   - component: {fileID: 411371527}
   - component: {fileID: 411371531}
+  - component: {fileID: 411371532}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -1822,7 +1839,19 @@ MonoBehaviour:
   - {fileID: 1868622030}
   - {fileID: 1953630038}
   - {fileID: 291928532}
-  useItemController: {fileID: 0}
+  useItemController: {fileID: 411371532}
+--- !u!114 &411371532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411371526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4495f0391df463c459803a549c8b1a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UserItem
 --- !u!1 &412648811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4862,6 +4891,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 6734237056663082788, guid: 5882c875d1520444c8a6670fce470114, type: 3}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name
       value: SkillFire
@@ -6338,7 +6383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9454,8 +9499,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1560741460}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &1560741466
 MonoBehaviour:
@@ -9744,6 +9789,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 456767350700619442, guid: ba1842b3817a69744a1eba38e8e166e7, type: 3}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name
       value: SkillThunder
@@ -9917,7 +9978,6 @@ MonoBehaviour:
   - {fileID: 68920600}
   - {fileID: 1382076994}
   statsCanvas: {fileID: 933289017}
-  statsOpen: 1
 --- !u!224 &1679779794 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2314728832089934763, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
@@ -18387,7 +18447,7 @@ MonoBehaviour:
   quantidade: 0
   itemImage: {fileID: 1773797312}
   quantityText: {fileID: 1357057899}
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 411371531}
 --- !u!224 &1977797321 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2314728832089934763, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
@@ -19696,19 +19756,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Color.b
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Color.g
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5586941136316567179, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Color.r
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7598963731772893654, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8946456146259317077, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
       propertyPath: m_Name

@@ -16,8 +16,9 @@ MonoBehaviour:
   description: Carne
   icon: {fileID: 2690274267995810836, guid: 670f716d5b85981479264e98150ddd52, type: 3}
   isGold: 0
-  currentHealth: 5
+  currentHealth: 1
   maxHealth: 0
   speed: 0
   damage: 0
+  armour: 0
   duracao: 0
