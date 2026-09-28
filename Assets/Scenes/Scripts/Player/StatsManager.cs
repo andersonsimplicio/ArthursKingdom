@@ -137,6 +137,9 @@ public class StatsManager : MonoBehaviour
         health+=amount;
         if(health > maxHealth)
             health = maxHealth;
+
+        if(health < 0)
+            health = 0;
         healthText.text =  $"HP: {health} / {maxHealth}";
     }
 

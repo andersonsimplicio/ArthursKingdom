@@ -28,13 +28,15 @@ public class PlayerHealth : MonoBehaviour
             StatsManager.instance.Health +=amount;
         }
             
-        healthText.text = "HP: "+ StatsManager.instance.Health +" / "+StatsManager.instance.MaxHealth;
+        
         healthTextAnimator.Play(lifeHash);
         if(StatsManager.instance.Health <= 0)
         {
             StatsManager.instance.Health = 0;
             player.gameObject.SetActive(false);
         }
+        healthText.text = "HP: "+ StatsManager.instance.Health +" / "+StatsManager.instance.MaxHealth;
+
     }
 
     public int CalculoDano(int danoRecebido)
