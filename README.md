@@ -57,3 +57,6 @@ Shop System (Part I): Collectable Items with Scriptable Objects			        - http
 Shop System (Part II): Setting Up Our Inventory UI                              - https://www.youtube.com/watch?v=QcRP8PZ8Kz8&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=32
 Shop System (Part III): Filling the Inventory                                   - https://www.youtube.com/watch?v=RM_w5IR6bV0&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=33
 Sistema de Loja (Parte IV): Usando Itens                                        - https://www.youtube.com/watch?v=hDA893jOUH8&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=34
+Sistema de Loja (Parte V): Empilhando e Soltando Itens                          - https://www.youtube.com/watch?v=hIMMaKlYajQ&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=35
+Sistema de Loja (Parte VI): Configurando a Interface do Usuário                 - https://www.youtube.com/watch?v=CwBITnCPWiM&list=PLSR2vNOypvs5yLsbqZc0e6RdqNnP1eGIc&index=36
+Sistema de Loja (Parte VII): Encha a Loja com Itens                             - https://www.youtube.com/watch?v=pPa81e-h6J0
