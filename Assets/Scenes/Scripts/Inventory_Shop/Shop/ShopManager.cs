@@ -12,16 +12,20 @@ public class ShopManager : MonoBehaviour
         PreencherLoja();
     } 
   public void PreencherLoja(){
+
+       
         for(int i = 0;i < shopItems.Count && i < shopSlots.Length; i++)
         {
             ShopItems shopItem = shopItems[i];
             shopSlots[i].Initialize(shopItem._itemSO,shopItem._price);
             shopSlots[i].gameObject.SetActive(true);
-        }     
+        }   
+        Debug.Log($"shopItems.Count {shopItems.Count}");
+        Debug.Log($"shopSlots.Length: {shopSlots.Length}");  
 
-        for(int i = shopItems.Count; shopItems.Count < shopSlots.Length; i++)
+        for(int i = shopItems.Count;i < shopSlots.Length; i++)
         {
-             shopSlots[i].gameObject.SetActive(false);
+            shopSlots[i].gameObject.SetActive(false);
         } 
    }  
 }

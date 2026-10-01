@@ -2001,7 +2001,6 @@ GameObject:
   - component: {fileID: 295509955}
   - component: {fileID: 295509957}
   - component: {fileID: 295509956}
-  - component: {fileID: 295509958}
   m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -2070,34 +2069,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295509954}
   m_CullTransparentMesh: 1
---- !u!114 &295509958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295509954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1ca0c1ddc570a4892748fe357c9cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShopManager
-  shopItems:
-  - itemSO: {fileID: 11400000, guid: 271e8568c3771334faba7e208326c2ec, type: 2}
-    price: 10
-  - itemSO: {fileID: 11400000, guid: 5e56bafb967d820489ab44c2116a7427, type: 2}
-    price: 50
-  - itemSO: {fileID: 11400000, guid: a930951087cd5ab47945ae16228572b3, type: 2}
-    price: 1
-  - itemSO: {fileID: 11400000, guid: a930951087cd5ab47945ae16228572b3, type: 2}
-    price: 1
-  shopSlots:
-  - {fileID: 1850115211}
-  - {fileID: 554460980}
-  - {fileID: 1752635386}
-  - {fileID: 2079257501}
-  - {fileID: 414992977}
-  - {fileID: 2121106986}
 --- !u!224 &302350618 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2314728832089934763, guid: 03ff730d92565814e8f4ae16a58f0f79, type: 3}
@@ -6005,6 +5976,7 @@ GameObject:
   - component: {fileID: 823765184}
   - component: {fileID: 823765183}
   - component: {fileID: 823765187}
+  - component: {fileID: 823765188}
   m_Layer: 5
   m_Name: ShopCanvas
   m_TagString: Untagged
@@ -6108,6 +6080,36 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &823765188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823765182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1ca0c1ddc570a4892748fe357c9cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  shopItems:
+  - itemSO: {fileID: 11400000, guid: 271e8568c3771334faba7e208326c2ec, type: 2}
+    price: 10
+  - itemSO: {fileID: 11400000, guid: 5e56bafb967d820489ab44c2116a7427, type: 2}
+    price: 50
+  - itemSO: {fileID: 11400000, guid: a930951087cd5ab47945ae16228572b3, type: 2}
+    price: 1
+  - itemSO: {fileID: 11400000, guid: a930951087cd5ab47945ae16228572b3, type: 2}
+    price: 1
+  - itemSO: {fileID: 11400000, guid: 271e8568c3771334faba7e208326c2ec, type: 2}
+    price: 10
+  shopSlots:
+  - {fileID: 1850115211}
+  - {fileID: 554460980}
+  - {fileID: 1752635386}
+  - {fileID: 2079257501}
+  - {fileID: 414992977}
+  - {fileID: 2121106986}
 --- !u!1 &828262204
 GameObject:
   m_ObjectHideFlags: 0
