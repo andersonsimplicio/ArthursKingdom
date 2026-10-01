@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07725e8ab63c15e4d9199ceedd6e9d4b, type: 3}
   m_Name: Steak
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Steak
+  itemName: Comida
   description: Carne
   icon: {fileID: 2690274267995810836, guid: 670f716d5b85981479264e98150ddd52, type: 3}
   isGold: 0

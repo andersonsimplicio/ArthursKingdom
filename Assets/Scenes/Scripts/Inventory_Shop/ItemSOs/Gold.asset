@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07725e8ab63c15e4d9199ceedd6e9d4b, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Gold
+  itemName: Ouro
   description: Ouro, move o mundo
   icon: {fileID: 4765518676241773232, guid: 7c7525697240e0e4087be1981f53b506, type: 3}
   isGold: 1
@@ -20,4 +20,5 @@ MonoBehaviour:
   maxHealth: 0
   speed: 0
   damage: 0
+  armour: 0
   duracao: 0

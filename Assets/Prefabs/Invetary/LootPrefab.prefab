@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2899367933064075892}
   - component: {fileID: 4496969992928793773}
   m_Layer: 0
-  m_Name: Steak
+  m_Name: Comida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

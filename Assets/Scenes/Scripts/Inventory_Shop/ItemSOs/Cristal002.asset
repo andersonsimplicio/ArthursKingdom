@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07725e8ab63c15e4d9199ceedd6e9d4b, type: 3}
   m_Name: Cristal002
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: 
+  itemName: Cristal 15+
   description: "Cristal de S\xE3o Anderson +5 vida,+5 Dano, +5 Armadura por 20s"
   icon: {fileID: 1674804629613845060, guid: 6552a092c2216df4b9c01986f77a0057, type: 3}
   isGold: 0

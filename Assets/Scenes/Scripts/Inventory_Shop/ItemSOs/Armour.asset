@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07725e8ab63c15e4d9199ceedd6e9d4b, type: 3}
   m_Name: Armour
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: 
+  itemName: Armadura
   description: 
   icon: {fileID: -5233972180137678507, guid: 1e6cb040576636c4bb25a2f59241e3c8, type: 3}
   isGold: 0
